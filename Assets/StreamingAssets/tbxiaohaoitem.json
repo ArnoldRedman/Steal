@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "buildid": "9",
+    "productid": "8",
+    "xiaohaoDict": [
+      [
+        "2",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "2",
+    "buildid": "9",
+    "productid": "7",
+    "xiaohaoDict": [
+      [
+        "2",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "3",
+    "buildid": "10",
+    "productid": "9",
+    "xiaohaoDict": [
+      [
+        "4",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "4",
+    "buildid": "10",
+    "productid": "7",
+    "xiaohaoDict": [
+      [
+        "4",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "5",
+    "buildid": "11",
+    "productid": "10",
+    "xiaohaoDict": [
+      [
+        "2",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "6",
+    "buildid": "11",
+    "productid": "11",
+    "xiaohaoDict": [
+      [
+        "2",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "7",
+    "buildid": "12",
+    "productid": "12",
+    "xiaohaoDict": [
+      [
+        "1",
+        2
+      ]
+    ]
+  },
+  {
+    "id": "8",
+    "buildid": "6",
+    "productid": "6",
+    "xiaohaoDict": [
+      [
+        "2",
+        10
+      ]
+    ]
+  }
+]

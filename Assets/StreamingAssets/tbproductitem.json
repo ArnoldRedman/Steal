@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "name": "蔬菜",
+    "unit": "个",
+    "description": "产自蔬菜农场",
+    "sprite": "Vegetable",
+    "price": 15
+  },
+  {
+    "id": "2",
+    "name": "牧草",
+    "unit": "束",
+    "description": "产自牧草农场",
+    "sprite": "Hay",
+    "price": 10
+  },
+  {
+    "id": "3",
+    "name": "棉花",
+    "unit": "个",
+    "description": "产自棉花农场",
+    "sprite": "mianhua",
+    "price": 25
+  },
+  {
+    "id": "4",
+    "name": "小麦",
+    "unit": "束",
+    "description": "产自小麦农场",
+    "sprite": "xiaomai",
+    "price": 20
+  },
+  {
+    "id": "5",
+    "name": "苹果",
+    "unit": "个",
+    "description": "产自苹果农场",
+    "sprite": "Apple",
+    "price": 30
+  },
+  {
+    "id": "6",
+    "name": "药草",
+    "unit": "个",
+    "description": "产自药草农场",
+    "sprite": "Yaocao",
+    "price": 50
+  },
+  {
+    "id": "7",
+    "name": "肉",
+    "unit": "块",
+    "description": "",
+    "sprite": "Pork",
+    "price": 35
+  },
+  {
+    "id": "8",
+    "name": "奶",
+    "unit": "瓶",
+    "description": "产自奶牛牧场",
+    "sprite": "Milk",
+    "price": 20
+  },
+  {
+    "id": "9",
+    "name": "鸡蛋",
+    "unit": "个",
+    "description": "产自养鸡场",
+    "sprite": "Egg",
+    "price": 1
+  },
+  {
+    "id": "10",
+    "name": "羊毛",
+    "unit": "块",
+    "description": "产自羊驼场",
+    "sprite": "Wool",
+    "price": 2
+  },
+  {
+    "id": "11",
+    "name": "毛皮",
+    "unit": "块",
+    "description": "",
+    "sprite": "maopi",
+    "price": 35
+  },
+  {
+    "id": "12",
+    "name": "蚕丝",
+    "unit": "捆",
+    "description": "产自养蚕场",
+    "sprite": "cansi",
+    "price": 30
+  }
+]

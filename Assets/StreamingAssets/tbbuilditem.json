@@ -1,0 +1,214 @@
+[
+  {
+    "id": "1",
+    "type": "farm",
+    "name": "蔬菜农场",
+    "prefab": "ShucaiFarm",
+    "price": 500,
+    "keepCost": 6,
+    "ripeningTime": 7,
+    "product": [
+      [
+        "1",
+        5
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "Vegetable",
+    "description": "",
+    "jieduan2": 4,
+    "jieduan3": 6
+  },
+  {
+    "id": "2",
+    "type": "farm",
+    "name": "牧草农场",
+    "prefab": "MucaoFarm",
+    "price": 300,
+    "keepCost": 3,
+    "ripeningTime": 7,
+    "product": [
+      [
+        "2",
+        5
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "Hay",
+    "description": "",
+    "jieduan2": 4,
+    "jieduan3": 6
+  },
+  {
+    "id": "3",
+    "type": "farm",
+    "name": "棉花农场",
+    "prefab": "MianhuaFarm",
+    "price": 500,
+    "keepCost": 10,
+    "ripeningTime": 90,
+    "product": [
+      [
+        "3",
+        50
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "mianhua",
+    "description": "",
+    "jieduan2": 35,
+    "jieduan3": 70
+  },
+  {
+    "id": "4",
+    "type": "farm",
+    "name": "小麦农场",
+    "prefab": "XiaomaiFarm",
+    "price": 400,
+    "keepCost": 10,
+    "ripeningTime": 50,
+    "product": [
+      [
+        "4",
+        20
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "xiaomai",
+    "description": "",
+    "jieduan2": 20,
+    "jieduan3": 40
+  },
+  {
+    "id": "5",
+    "type": "farm",
+    "name": "苹果农场",
+    "prefab": "PingguoFarm",
+    "price": 600,
+    "keepCost": 50,
+    "ripeningTime": 360,
+    "product": [
+      [
+        "5",
+        180
+      ]
+    ],
+    "firstGrowTime": 730,
+    "sprite": "Apple",
+    "description": "",
+    "jieduan2": 100,
+    "jieduan3": 150
+  },
+  {
+    "id": "6",
+    "type": "farm",
+    "name": "药草农场",
+    "prefab": "YaocaoFarm",
+    "price": 400,
+    "keepCost": 30,
+    "ripeningTime": 10,
+    "product": [
+      [
+        "6",
+        5
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "Yaocao",
+    "description": "",
+    "jieduan2": 5,
+    "jieduan3": 8
+  },
+  {
+    "id": "9",
+    "type": "pasture",
+    "name": "奶牛场",
+    "prefab": "CowPasture",
+    "price": 800,
+    "keepCost": 140,
+    "ripeningTime": 90,
+    "product": [
+      [
+        "7",
+        100
+      ],
+      [
+        "8",
+        200
+      ]
+    ],
+    "firstGrowTime": 360,
+    "sprite": "niu",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
+  },
+  {
+    "id": "10",
+    "type": "pasture",
+    "name": "养鸡场",
+    "prefab": "ChickenPasture",
+    "price": 600,
+    "keepCost": 100,
+    "ripeningTime": 2,
+    "product": [
+      [
+        "9",
+        5
+      ],
+      [
+        "7",
+        1
+      ]
+    ],
+    "firstGrowTime": 30,
+    "sprite": "chicken",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
+  },
+  {
+    "id": "11",
+    "type": "pasture",
+    "name": "羊驼场",
+    "prefab": "AlpacaRanch",
+    "price": 1000,
+    "keepCost": 150,
+    "ripeningTime": 3,
+    "product": [
+      [
+        "10",
+        6
+      ],
+      [
+        "11",
+        2
+      ]
+    ],
+    "firstGrowTime": 360,
+    "sprite": "yangtuo",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
+  },
+  {
+    "id": "12",
+    "type": "pasture",
+    "name": "养蚕场",
+    "prefab": "SericultureFarm",
+    "price": 800,
+    "keepCost": 100,
+    "ripeningTime": 1,
+    "product": [
+      [
+        "12",
+        3
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "canbaobao",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
+  }
+]
