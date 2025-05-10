@@ -5,7 +5,7 @@
     "unit": "个",
     "description": "产自蔬菜农场",
     "sprite": "Vegetable",
-    "price": 15
+    "price": 2
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "unit": "束",
     "description": "产自牧草农场",
     "sprite": "Hay",
-    "price": 10
+    "price": 1
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "unit": "个",
     "description": "产自棉花农场",
     "sprite": "mianhua",
-    "price": 25
+    "price": 2
   },
   {
     "id": "4",
@@ -29,7 +29,7 @@
     "unit": "束",
     "description": "产自小麦农场",
     "sprite": "xiaomai",
-    "price": 20
+    "price": 1
   },
   {
     "id": "5",
@@ -37,7 +37,7 @@
     "unit": "个",
     "description": "产自苹果农场",
     "sprite": "Apple",
-    "price": 30
+    "price": 5
   },
   {
     "id": "6",
@@ -45,7 +45,7 @@
     "unit": "个",
     "description": "产自药草农场",
     "sprite": "Yaocao",
-    "price": 50
+    "price": 6
   },
   {
     "id": "7",
@@ -53,7 +53,7 @@
     "unit": "块",
     "description": "",
     "sprite": "Pork",
-    "price": 35
+    "price": 25
   },
   {
     "id": "8",
@@ -85,7 +85,7 @@
     "unit": "块",
     "description": "",
     "sprite": "maopi",
-    "price": 35
+    "price": 20
   },
   {
     "id": "12",
@@ -93,6 +93,22 @@
     "unit": "捆",
     "description": "产自养蚕场",
     "sprite": "cansi",
-    "price": 30
+    "price": 15
+  },
+  {
+    "id": "13",
+    "name": "饲料",
+    "unit": "包",
+    "description": "产自合成工坊",
+    "sprite": "Feed",
+    "price": 22
+  },
+  {
+    "id": "14",
+    "name": "药草泥",
+    "unit": "碗",
+    "description": "产自合成工坊",
+    "sprite": "HerbMud",
+    "price": 17
   }
 ]

@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 
 public class BasePanel : MonoBehaviour
 {
+    //找到UI的根节点
+    private RectTransform contentRoot;
     //控制淡入淡出的组件 
     private CanvasGroup canvasGroup;
     //淡入淡出速度 
@@ -12,8 +15,20 @@ public class BasePanel : MonoBehaviour
     private bool isShow;
     private Button closeBtn;
     private UnityAction hideAction;
+
+    /// <summary>
+    /// 延迟一帧执行刷新面板
+    /// </summary>
+    /// <returns></returns>
+    protected IEnumerator DelayedLayoutUpdate()
+    {
+        yield return null; // 等待一帧
+        LayoutRebuilder.ForceRebuildLayoutImmediate(contentRoot);
+    }
+
     public virtual void Awake()
     {
+        contentRoot = GetComponent<RectTransform>();
         closeBtn = this.gameObject.transform.Find("CloseBtn") == null ? null : this.gameObject.transform.Find("CloseBtn").GetComponent<Button>();
         if (closeBtn != null)
         {

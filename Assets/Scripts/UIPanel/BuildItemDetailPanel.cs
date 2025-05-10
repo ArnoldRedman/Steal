@@ -22,13 +22,14 @@ public class BuildItemDetailPanel : BasePanel
 
     private void OnEnable()
     {
+        StartCoroutine(DelayedLayoutUpdate());
         Init();//初始化详情面板
         UpdateEveryData();
-        UpdateData();//更新收获时间的信息
     }
 
     private void OnDisable()
     {
+        StopCoroutine(DelayedLayoutUpdate());
         isOpen = false;
     }
 
@@ -41,8 +42,16 @@ public class BuildItemDetailPanel : BasePanel
         {
             return;
         }
-
         productTimeDescription.text = $"距收获还有{currBuildItem.shouhuoTime}天";
+        UpdateState();
+    }
+
+    /// <summary>
+    /// 更新每日状态信息
+    /// </summary>
+    private void UpdateState()
+    {
+        
     }
 
     /// <summary>
@@ -55,24 +64,17 @@ public class BuildItemDetailPanel : BasePanel
         currBuildItem = BuildController.Instance.currGround.transform.Find("Building").GetComponent<BuildItemBase>();
         //拿到当前的建造信息
         BuildItemData buildItemDate = GameManager.instance.buildItemDict[currBuildItem.buildid];
-        //产出物品的字典
-        Dictionary<string, ProductItemData> productDict = GameManager.instance.productItemDict;
-        //拿到产出物品
-        ProductItemData currProduct = productDict[currBuildItem.productItemId];
         //建造物的标题
         title.text = buildItemDate.name;
-        //当前产出物品的名字
-        productName.text = currProduct.name;
-        //当前产出物品的图片
-        productIcon.sprite = ResMgr.Instance.load<Sprite>("Sprite/"+currProduct.sprite);
-        //产出物品产量的描述
-        productDescription.text = $"每{buildItemDate.ripeningTime}天产出{buildItemDate.product[currBuildItem.productItemId]}{currProduct.unit}{currProduct.name}";
-        //距离收获时间
-        productTimeDescription.text = $"距离收获还剩{currBuildItem.shouhuoTime}天";
-        //初始化消耗信息 消耗物品字典为空则不用显示 更新显示消耗物品
-        UpdateXiaohaoItem(currBuildItem.buildid,currBuildItem.productItemId);
         currBuildId = currBuildItem.buildid;
         currProductId = currBuildItem.productItemId;
+        //产品信息更新
+        UpdateData();//更换按钮之后要更新的相关内容
+        //产能信息更新
+
+        //耗材更新
+
+        //状态更新
     }
 
     /// <summary>
@@ -80,15 +82,15 @@ public class BuildItemDetailPanel : BasePanel
     /// </summary>
     private void UpdateXiaohaoItem(string buildId,string productId)
     {
-        if (currProductId == productId && currBuildId == buildId)
-        {
-            return;//点的两个是同一类型的建筑物，不需要更新
-        }
+        //if (currProductId == productId && currBuildId == buildId)
+        //{
+        //    return;//点的两个是同一类型的建筑物，不需要更新
+        //}
 
         //先清除原来的物品信息
         for (int i = 0; i < xiaohao.transform.childCount; i++)
         {
-            DestroyImmediate(xiaohao.transform.GetChild(i).gameObject);
+            Destroy(xiaohao.transform.GetChild(i).gameObject);
         }
         //显示消耗物品
         //拿到消耗物品的字典
@@ -114,9 +116,47 @@ public class BuildItemDetailPanel : BasePanel
         EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件, UpdateEveryData);
     }
 
+    /// <summary>
+    /// 更换按钮之后要更新的相关内容
+    /// </summary>
     private void UpdateData()
     {
-        
+        //拿到当前的建造信息
+        BuildItemData buildItemDate = GameManager.instance.buildItemDict[currBuildItem.buildid];
+        //产出物品的字典
+        Dictionary<string, ProductItemData> productDict = GameManager.instance.productItemDict;
+        //拿到产出物品
+        ProductItemData currProduct = productDict[currBuildItem.productItemId];
+        //产品信息更新
+        UpdateProductData(currProduct);
+        //产能信息更新
+        UpdateProductEfficient(buildItemDate, currProduct);
+        //每日要更新的信息
+        UpdateEveryData();
+        //耗材信息更新 建造id 产出物品id
+        UpdateXiaohaoItem(currBuildItem.buildid,currProduct.id);
     }
 
+    /// <summary>
+    /// 更新产品信息
+    /// </summary>
+    /// <param name="currProduct"></param>
+    private void UpdateProductData(ProductItemData currProduct)
+    {
+        //当前产出物品的名字
+        productName.text = currProduct.name;
+        //当前产出物品的图片
+        productIcon.sprite = ResMgr.Instance.load<Sprite>("Sprite/" + currProduct.sprite);
+    }
+
+    /// <summary>
+    /// 更新产能信息
+    /// </summary>
+    /// <param name="buildItemDate"></param>
+    /// <param name="currProduct"></param>
+    private void UpdateProductEfficient(BuildItemData buildItemDate, ProductItemData currProduct)
+    {
+        //每多少天，产出多少单位的什么东西
+        productDescription.text = $"每{buildItemDate.ripeningTime}天，产出{buildItemDate.product[currProduct.id]}{currProduct.unit}{currProduct.name}";  
+    }
 }

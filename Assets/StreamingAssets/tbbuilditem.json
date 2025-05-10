@@ -210,5 +210,44 @@
     "description": "",
     "jieduan2": 0,
     "jieduan3": 0
+  },
+  {
+    "id": "13",
+    "type": "factory",
+    "name": "合成工坊",
+    "prefab": "MaterialFactory",
+    "price": 1000,
+    "keepCost": 110,
+    "ripeningTime": 1,
+    "product": [
+      [
+        "13",
+        2
+      ],
+      [
+        "14",
+        3
+      ]
+    ],
+    "firstGrowTime": 0,
+    "sprite": "Shack",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
+  },
+  {
+    "id": "14",
+    "type": "other",
+    "name": "商店",
+    "prefab": "Shop",
+    "price": 2000,
+    "keepCost": 100,
+    "ripeningTime": 0,
+    "product": [],
+    "firstGrowTime": 0,
+    "sprite": "Shop",
+    "description": "",
+    "jieduan2": 0,
+    "jieduan3": 0
   }
 ]
