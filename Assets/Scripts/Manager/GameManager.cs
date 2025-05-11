@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void PlayerDataInit()
     {
-        CurrPlayerData = new PlayerData { Coin = 10000, name = "Jack" };
+        CurrPlayerData = new PlayerData { Coin = 9999999, name = "Jack" };
     }
 
     private void BuildItemDataInit()
