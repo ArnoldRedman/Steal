@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2359352749581918170}
+  - component: {fileID: 6902916585647760015}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -31,6 +32,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6902916585647760015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300402191532139585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99366f4c60de10641875ea36e8a07052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productItemId: 
+  ripeningTime: 0
+  weihuPrice: 0
+  currentProductTime: 0
+  buildid: 14
+  isShengzhangqi: 0
+  shengzhangzhouqi: 0
+  totalTime: 0
+  shouhuoTime: 0
+  isAdult: 0
+  canProduct: 0
+  isMaterialEnough: 0
+  isMoneyEnough: 0
+  buildType: 
+  priceRate: 0
+  maxLevel: 0
+  level: 0
+  upgradePrice: 0
+  Incom: 0
+  chanchuCoin: 0
+  earnings: 0
 --- !u!1001 &1150591936886390432
 PrefabInstance:
   m_ObjectHideFlags: 0

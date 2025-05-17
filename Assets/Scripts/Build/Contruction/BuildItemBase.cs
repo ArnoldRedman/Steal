@@ -76,7 +76,7 @@ public class BuildItemBase : MonoBehaviour
     /// 判断金币是否充足
     /// </summary>
     /// <returns></returns>
-    private bool IsMoneyEnough()
+    public bool IsMoneyEnough()
     {
         if (GameManager.instance.CurrPlayerData.Coin >= weihuPrice)
         {

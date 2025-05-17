@@ -85,9 +85,20 @@ public class BuildController : UnitySingleTon<BuildController>
                     UIManager.Instance.openPanel<BuildPanel>();
                     break;
 
-                case 2://已建造 显示建造物详情
-                    UIManager.Instance.closePanel<BuildItemDetailPanel>();
-                    UIManager.Instance.openPanel<BuildItemDetailPanel>();
+                case 2://已建造 显示建造物详情 如果是商店要区分普通建造物
+                    string type = currGround.transform.GetComponentInChildren<BuildItemBase>().buildType;
+                    if (type == "other")//显示商店详情页面
+                    {
+                        UIManager.Instance.closePanel<BuildItemDetailPanel>();
+                        UIManager.Instance.closePanel<ShopDetailPanel>();
+                        UIManager.Instance.openPanel<ShopDetailPanel>();
+                    }
+                    else
+                    {
+                        UIManager.Instance.closePanel<ShopDetailPanel>();
+                        UIManager.Instance.closePanel<BuildItemDetailPanel>();
+                        UIManager.Instance.openPanel<BuildItemDetailPanel>();
+                    }
                     break;
             }
         }

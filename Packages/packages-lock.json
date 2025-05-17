@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.dl.ui-check-tools": {
-      "version": "https://gitee.com/li-5-lin/ui-check-tools.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "1dfce55fea77197582df116e1d2d04a760f4b791"
-    },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
       "depth": 0,

@@ -38,7 +38,7 @@ public class PlayerPropPanel : BasePanel
 
     private void UpdateCoin()
     {
-        moneyText.text = GameManager.instance.CurrPlayerData.Coin.ToString();
+        moneyText.text = GameManager.instance.CurrPlayerData.Coin.ToString("0000");
     }
 
     private void UpdateTimeData()

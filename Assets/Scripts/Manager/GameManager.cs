@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public KnapsackData knapsack;
     //消耗物品的列表
     public List<XiaohaoItemData> xiaohaoList = new List<XiaohaoItemData>();
+    //售卖商品列表
+    public List<MerchantingData> merchantingList = new List<MerchantingData>();
 
     private void Awake()
     {
@@ -72,6 +74,16 @@ public class GameManager : MonoBehaviour
         xiaohaoItemDataInit();
         //初始化背包信息
         KnapsackDataInit();
+        //初始化商店商品的字典数据
+        MerchantingDataInit();
+    }
+
+    /// <summary>
+    /// 初始化商店商品的字典
+    /// </summary>
+    private void MerchantingDataInit()
+    {
+        merchantingList = JsonMgr.Instance.LoadData<List<MerchantingData>>("tbmerchantingitem");
     }
 
     /// <summary>
@@ -142,7 +154,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void PlayerDataInit()
     {
-        CurrPlayerData = new PlayerData { Coin = 9999999, name = "Jack" };
+        CurrPlayerData = new PlayerData { Coin = 200000, name = "Jack",GameLevel = 0};
     }
 
     private void BuildItemDataInit()
@@ -155,14 +167,6 @@ public class GameManager : MonoBehaviour
             //往字典中添加新项
             buildItemDict.Add(buildItemData.id,buildItemData);
         }
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    EventCenter.Instance.EventTrigger<string>(GameEvent.游戏失败, System.DateTime.Now.ToString());
-        //}
     }
 
 }

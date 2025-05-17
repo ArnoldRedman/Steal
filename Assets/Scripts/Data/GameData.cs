@@ -3,21 +3,29 @@ using System.Collections.Generic;
 
 public class PlayerData
 {
-    private int coin;
-
-    public int Coin//属性 get set(设置值的时候会执行方法)
+    public string name;
+    private float coin;
+    public float Coin//属性 get set(设置值的时候会执行方法)
     {
-        get
-        {
-            return coin;
-        }
+        get => coin;
         set
         {
             coin = value;
             EventCenter.Instance.EventTrigger(GameEvent.金币发生改变);
         }
     }
-    public string name;
+
+    private int gameLevel;
+
+    public int GameLevel
+    {
+        get => gameLevel;
+        set
+        {
+            gameLevel = value;
+            EventCenter.Instance.EventTrigger(GameEvent.玩家等级发生变化);
+        }
+    }
 }
 
 /// <summary>
@@ -86,4 +94,15 @@ public class XiaohaoItemData
     public string productId;//产出物品id
     [JsonConverter(typeof(ArrayToDictionaryConverter<string,int>))]
     public Dictionary<string, int> XiaohaoDict;//产出物品每天消耗的物品
+}
+
+/// <summary>
+/// 售卖商品信息数据对象
+/// </summary>
+public class MerchantingData
+{
+    public string productid;//产品的id  产品数据表中的id  
+    public int maxCount;//购买的最大数量
+    public int gameLevel;//当前售卖的物品在哪个等级可以进行售卖  游戏的等级 
+
 }

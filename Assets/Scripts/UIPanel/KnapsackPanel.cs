@@ -14,7 +14,7 @@ public class KnapsackPanel : BasePanel
     //每次打开面板的时候从背包数据中获取当前最新的信息
     private void OnEnable()
     {
-
+        UpdateData();
     }
 
     void Start()

@@ -1,0 +1,72 @@
+[
+  {
+    "productid": "1",
+    "maxCount": 10,
+    "gameLevel": 0
+  },
+  {
+    "productid": "2",
+    "maxCount": 10,
+    "gameLevel": 0
+  },
+  {
+    "productid": "3",
+    "maxCount": 10,
+    "gameLevel": 0
+  },
+  {
+    "productid": "4",
+    "maxCount": 10,
+    "gameLevel": 0
+  },
+  {
+    "productid": "5",
+    "maxCount": 10,
+    "gameLevel": 1
+  },
+  {
+    "productid": "6",
+    "maxCount": 10,
+    "gameLevel": 1
+  },
+  {
+    "productid": "7",
+    "maxCount": 10,
+    "gameLevel": 2
+  },
+  {
+    "productid": "8",
+    "maxCount": 10,
+    "gameLevel": 2
+  },
+  {
+    "productid": "9",
+    "maxCount": 10,
+    "gameLevel": 2
+  },
+  {
+    "productid": "10",
+    "maxCount": 10,
+    "gameLevel": 2
+  },
+  {
+    "productid": "11",
+    "maxCount": 10,
+    "gameLevel": 2
+  },
+  {
+    "productid": "12",
+    "maxCount": 10,
+    "gameLevel": 3
+  },
+  {
+    "productid": "13",
+    "maxCount": 10,
+    "gameLevel": 3
+  },
+  {
+    "productid": "14",
+    "maxCount": 10,
+    "gameLevel": 3
+  }
+]

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        //判断是否在ui层上
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
