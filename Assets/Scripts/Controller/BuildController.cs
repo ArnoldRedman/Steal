@@ -64,6 +64,7 @@ public class BuildController : UnitySingleTon<BuildController>
         {
             if (hit.collider.CompareTag("Ground"))
             {
+                currSelectedTip.SetActive(true);
                 currGround = hit.collider.GetComponent<GroundProperties>();
                 //Debug.Log(currGround.groundPropertyData.GroundName);
                 //显示鼠标悬浮的提示框
@@ -102,5 +103,14 @@ public class BuildController : UnitySingleTon<BuildController>
                     break;
             }
         }
+    }
+    
+    /// <summary>
+    /// 提供给外部隐藏提示土地的方法
+    /// </summary>
+    public void DisAppareCurrSelectedTip()
+    {
+        currGround = null;
+        currSelectedTip.SetActive(false);
     }
 }

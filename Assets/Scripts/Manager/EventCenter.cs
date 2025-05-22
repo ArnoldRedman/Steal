@@ -7,6 +7,15 @@ public interface IEventInfo
 
 }
 
+public class EventInfo<T,K> : IEventInfo
+{
+    public UnityAction<T, K> actions = delegate { };
+    public EventInfo(UnityAction<T, K> action)
+    {
+        actions += action;
+    }
+}
+
 public class EventInfo<T> : IEventInfo
 {
     public UnityAction<T> actions = delegate { };
@@ -62,6 +71,15 @@ public class EventCenter : MonoBehaviour
         }
     }
 
+    public void EventTrigger<T,K>(GameEvent gameEvent, T value1,K value2)
+    {
+        if (eventDict.ContainsKey(gameEvent))
+        {
+            //Debug.Log(eventDict[gameEvent]);
+            (eventDict[gameEvent] as EventInfo<T,K>).actions?.Invoke(value1,value2);
+        }
+    }
+
 
     #region 添加事件监听器
     public void AddEventListener(GameEvent gameEvent, UnityAction action)
@@ -87,6 +105,18 @@ public class EventCenter : MonoBehaviour
             eventDict.Add(gameEvent, new EventInfo<T>(action) as IEventInfo);
         }
     }
+
+    public void AddEventListener<T,K>(GameEvent gameEvent, UnityAction<T,K> action)
+    {
+        if (eventDict.ContainsKey(gameEvent))
+        {
+            (eventDict[gameEvent] as EventInfo<T,K>).actions += action;
+        }
+        else
+        {
+            eventDict.Add(gameEvent, new EventInfo<T,K>(action) as IEventInfo);
+        }
+    }
     #endregion
 
     #region 移除事件添加器
@@ -106,6 +136,13 @@ public class EventCenter : MonoBehaviour
         }
     }
 
+    public void RemoveEventListener<T,K>(GameEvent gameEvent, UnityAction<T,K> action)
+    {
+        if (eventDict.ContainsKey(gameEvent))
+        {
+            (eventDict[gameEvent] as EventInfo<T,K>).actions -= action;
+        }
+    }
     #endregion
 
     //清空事件

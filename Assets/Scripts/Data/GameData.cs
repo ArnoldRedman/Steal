@@ -106,3 +106,17 @@ public class MerchantingData
     public int gameLevel;//当前售卖的物品在哪个等级可以进行售卖  游戏的等级 
 
 }
+
+/// <summary>
+/// 对话数据信息对象
+/// </summary>
+public class DialogueItemData
+{
+    public string id;//对话id
+    public string targetName;//对话目标id
+    public string targetIcon;//对话目标的图片
+    public string dialogueContent;//对话内容
+    public string nextId;//下一个对话的id
+    public List<string> optionList;//选项列表
+    public string taskId;//任务id
+}

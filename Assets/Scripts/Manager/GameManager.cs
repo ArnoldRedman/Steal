@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public List<XiaohaoItemData> xiaohaoList = new List<XiaohaoItemData>();
     //售卖商品列表
     public List<MerchantingData> merchantingList = new List<MerchantingData>();
+    //对话数据的字典
+    public Dictionary<string, DialogueItemData> dialogueItemDict = new Dictionary<string, DialogueItemData>();
 
     private void Awake()
     {
@@ -76,6 +78,23 @@ public class GameManager : MonoBehaviour
         KnapsackDataInit();
         //初始化商店商品的字典数据
         MerchantingDataInit();
+        //初始化对话信息的字典
+        DialogueItemDataInit();
+    }
+
+    /// <summary>
+    /// 对话数据初始化
+    /// </summary>
+    private void DialogueItemDataInit()
+    {
+        //对话数据列表
+        List<DialogueItemData> dialogueItemDataList =
+            JsonMgr.Instance.LoadData<List<DialogueItemData>>("tbdialogueitem");
+        //保存到字典中
+        foreach (var data in dialogueItemDataList)
+        {
+            dialogueItemDict.Add(data.id, data);
+        }
     }
 
     /// <summary>
