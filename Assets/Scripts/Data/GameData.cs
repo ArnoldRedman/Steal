@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerData
 {
@@ -119,4 +120,32 @@ public class DialogueItemData
     public string nextId;//下一个对话的id
     public List<string> optionList;//选项列表
     public string taskId;//任务id
+}
+
+/// <summary>
+/// 任务基本数据信息
+/// </summary>
+public class TaskItemData
+{
+    public string id;//任务id
+    public bool isStarted;//任务是否进行中 如果开始就要添加到对应任务UI中
+    public string isEnd;//任务是否完成，完成触发奖励
+    public bool isFinished;//触发奖励后显示任务已完成
+    [JsonConverter(typeof(ArrayToDictionaryConverter<string,string>))]
+    public Dictionary<string, string> demandDict;//需求字典，键为需求类型 值为需求id
+    public string type;//任务需求类型 主线任务还是支线任务
+    public int level;//该任务所处的游戏等级
+}
+
+/// <summary>
+/// 判断数据需求量的信息
+/// </summary>
+public class NumDemandData
+{
+    public string id;//需求id
+    public string itemId;//物品id
+    public int currNum;//当前完成数量
+    public int itemNum;//需要完成的物品数量
+    public string itemType;//物品类型
+    public string description;//物品描述
 }

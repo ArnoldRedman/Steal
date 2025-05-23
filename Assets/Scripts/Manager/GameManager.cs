@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public List<MerchantingData> merchantingList = new List<MerchantingData>();
     //对话数据的字典
     public Dictionary<string, DialogueItemData> dialogueItemDict = new Dictionary<string, DialogueItemData>();
+    //需求列表
+    public List<NumDemandData> numDemandList = new List<NumDemandData>();
+    //任务字典
+    public Dictionary<string,TaskItemData> taskItemDict = new Dictionary<string, TaskItemData>();
 
     private void Awake()
     {
@@ -80,6 +84,38 @@ public class GameManager : MonoBehaviour
         MerchantingDataInit();
         //初始化对话信息的字典
         DialogueItemDataInit();
+        //初始化任务数据
+        TaskDataInit();
+    }
+    
+    /// <summary>
+    /// 获取指定需求id的数量类型需求数据信息  
+    /// </summary>
+    /// <returns></returns>
+    public NumDemandData GetNumDemandData(string id)
+    {
+        foreach (var data in numDemandList)
+        {
+            if (data.id == id)
+            {
+                return data;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// 初始化任务数据
+    /// </summary>
+    private void TaskDataInit()
+    {
+        //初始化需求列表 
+        numDemandList = JsonMgr.Instance.LoadData<List<NumDemandData>>("tbnumdemand");
+        List<TaskItemData> taskItemList = JsonMgr.Instance.LoadData<List<TaskItemData>>("tbtask");
+        foreach (TaskItemData taskItemData in taskItemList)
+        {
+            taskItemDict.Add(taskItemData.id,taskItemData);        
+        }
     }
 
     /// <summary>
