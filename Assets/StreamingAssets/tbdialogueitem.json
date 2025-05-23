@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1",
+    "targetName": "NPC",
+    "targetIcon": "16",
+    "dialogueContent": "你好骑士请问有什么可以帮助你的嘛？",
+    "nextId": "0",
+    "optionList": [
+      "2",
+      "5"
+    ],
+    "taskId": "0"
+  },
+  {
+    "id": "2",
+    "targetName": "小明",
+    "targetIcon": "15",
+    "dialogueContent": "交易物品",
+    "nextId": "7",
+    "optionList": [],
+    "taskId": "0"
+  },
+  {
+    "id": "3",
+    "targetName": "NPC",
+    "targetIcon": "16",
+    "dialogueContent": "我这边有上好的玉石和我进行兑换嘛",
+    "nextId": "0",
+    "optionList": [
+      "4",
+      "6"
+    ],
+    "taskId": "0"
+  },
+  {
+    "id": "4",
+    "targetName": "小明",
+    "targetIcon": "15",
+    "dialogueContent": "花费10000进行兑换",
+    "nextId": "0",
+    "optionList": [],
+    "taskId": "1"
+  },
+  {
+    "id": "5",
+    "targetName": "小明",
+    "targetIcon": "15",
+    "dialogueContent": "离开",
+    "nextId": "0",
+    "optionList": [],
+    "taskId": "0"
+  },
+  {
+    "id": "6",
+    "targetName": "小明",
+    "targetIcon": "15",
+    "dialogueContent": "不了谢谢！",
+    "nextId": "0",
+    "optionList": [],
+    "taskId": "0"
+  },
+  {
+    "id": "7",
+    "targetName": "NPC",
+    "targetIcon": "16",
+    "dialogueContent": "玉石产自罗马尼亚",
+    "nextId": "3",
+    "optionList": [],
+    "taskId": "0"
+  }
+]
