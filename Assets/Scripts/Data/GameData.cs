@@ -144,8 +144,9 @@ public class NumDemandData
 {
     public string id;//需求id
     public string itemId;//物品id
-    public int currNum;//当前完成数量
+    public int currentNum;//当前完成数量
     public int itemNum;//需要完成的物品数量
     public string itemType;//物品类型
-    public string description;//物品描述
+    public string descripe;//物品描述
+    public string description => descripe;
 }

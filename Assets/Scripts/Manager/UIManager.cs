@@ -28,6 +28,8 @@ public class UIManager : UnitySingleTonMono<UIManager>
             CurrentShowPanel = new GameObject();
             CurrentShowPanel.name = "CurrentShowPanel";
             CurrentShowPanel.transform.SetParent(Canvas.transform);
+            CurrentShowPanel.AddComponent<RectTransform>();
+            CurrentShowPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width,Screen.height);
             CurrentShowPanel.transform.localPosition = Vector3.zero;
             CurrentShowPanel.transform.localScale = Vector3.one;
         }
@@ -43,12 +45,14 @@ public class UIManager : UnitySingleTonMono<UIManager>
         else//不在字典中 创建一个新的面板 存到我们的字典中 
         {
             GameObject panelObj = Resources.Load<GameObject>("UI/UIPanel/" + panelName);
+            Vector3 anch = panelObj.GetComponent<RectTransform>().anchoredPosition3D;//获取预制体原来锚点的位置
             //克隆面板到我们的Canvas容器下  我们现在还没有容器  容器应该在哪里手动生成呢  Awake 
             panelObj = GameObject.Instantiate<GameObject>(panelObj);
             panelObj.transform.SetParent(CurrentShowPanel.transform);
             BasePanel panel = panelObj.GetComponent<T>() as BasePanel;
             panelObj.transform.localPosition = Vector3.zero;
             panelObj.transform.localScale = Vector3.one;
+            panelObj.GetComponent<RectTransform>().anchoredPosition = anch;
             panelObj.name = typeof(T).Name;
             //保存到字典中  
             UIPanelDict.Add(panelName, panel);

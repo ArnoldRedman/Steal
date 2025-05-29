@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5925616035125619069}
   - component: {fileID: 5925616035125619070}
   - component: {fileID: 5925616035125619071}
+  - component: {fileID: -3779194690905220209}
   m_Layer: 5
   m_Name: taskItem
   m_TagString: Untagged
@@ -104,6 +105,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &-3779194690905220209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925616035125619073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9430c5d9000004f817c26523ba0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskDes: {fileID: 5925616036573826260}
+  ItemImg: {fileID: 5925616036468690598}
+  currentCountText: {fileID: 5925616035562793274}
+  countText: {fileID: 5925616036536459672}
+  isFinishIcon: {fileID: 5925616035352742494}
 --- !u!1 &5925616035206473999
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d8d25106987a08743a0413d4f9ff94cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a36a8139bb2e3bb44ae4f3cab233dc13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
