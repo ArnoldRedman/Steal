@@ -36,10 +36,10 @@
     "id": "4",
     "targetName": "小明",
     "targetIcon": "15",
-    "dialogueContent": "花费10000进行兑换",
+    "dialogueContent": "金币达到1000000可以领取免费的玉石",
     "nextId": "0",
     "optionList": [],
-    "taskId": "1"
+    "taskId": "16"
   },
   {
     "id": "5",

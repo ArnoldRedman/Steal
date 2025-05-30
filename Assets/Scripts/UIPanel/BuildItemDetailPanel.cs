@@ -31,13 +31,28 @@ public class BuildItemDetailPanel : BasePanel
 
     private void OnEnable()
     {
+        //移除建造物
+        removeBtn.onClick.AddListener(() =>
+        {
+            BuildController.Instance.RemoveBuilding(currBuildItem.buildid,currBuildItem);
+        });
+        EventCenter.Instance.AddEventListener(GameEvent.拆除建造物,chaichu);
         StartCoroutine(DelayedLayoutUpdate());
         Init();//初始化详情面板
         UpdateEveryData();
     }
 
+    /// <summary>
+    /// 拆除建造物之后关闭详情面板
+    /// </summary>
+    private void chaichu()
+    {
+        UIManager.Instance.closePanel<BuildItemDetailPanel>();
+    }
+    
     private void OnDisable()
     {
+        EventCenter.Instance.RemoveEventListener(GameEvent.拆除建造物,chaichu);
         StopCoroutine(DelayedLayoutUpdate());
         isOpen = false;
     }

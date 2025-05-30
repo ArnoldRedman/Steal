@@ -11,7 +11,7 @@ public class TimeController
     //DateTimeOffset.UtcNow.ToUnixTimeSeconds();可获取当前时间的时间戳
     public long ticks = 1722009600;//初始的时间戳
     public float timer;//记录当前周期
-    public float dayTime = 0.2f;//每隔dayTime的时间间隔更新一次时间
+    public float dayTime = 0.02f;//每隔dayTime的时间间隔更新一次时间
 
     /// <summary>
     /// 更新时间的方法

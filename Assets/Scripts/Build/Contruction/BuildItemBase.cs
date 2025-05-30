@@ -48,7 +48,6 @@ public class BuildItemBase : MonoBehaviour
         BuildItemData buildItemData = GameManager.instance.buildItemDict[buildid];//拿到当前对应id的建造物信息
         productDict = buildItemData.product;//拿到产出物品字典
         productItemId = buildItemData.product.Keys.First();//产出物品可能有多个
-        print(productItemId);
         ripeningTime = buildItemData.ripeningTime;//物品产出时间
         currentProductTime = 0;
         buildType = buildItemData.type;
@@ -151,12 +150,11 @@ public class BuildItemBase : MonoBehaviour
             shouhuoTime = ripeningTime;//重新将收获时间变为成熟时间
             currentProductTime = 0;
             //到了生产周期时间，在背包中添加生产的物品  
-                //更新背包数据
-                GameManager.instance.knapsack.productDict[productItemId] +=
+            //更新背包数据
+            GameManager.instance.knapsack.productDict[productItemId] +=
                     GameManager.instance.buildItemDict[buildid].product[productItemId];
-                print(GameManager.instance.buildItemDict[buildid].product[productItemId]);
+            //print(GameManager.instance.buildItemDict[buildid].product[productItemId]);
             
-
             //背包数据变化
             EventCenter.Instance.EventTrigger(GameEvent.背包数据变化);
         }

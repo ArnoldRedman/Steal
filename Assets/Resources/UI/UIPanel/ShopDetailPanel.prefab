@@ -2467,6 +2467,7 @@ MonoBehaviour:
   BuyItemPanel: {fileID: 5998561652025009684}
   BuyItemCotent: {fileID: 5998561650528186255}
   SellItemPanel: {fileID: 2261009874360057916}
+  removeBtn: {fileID: 3468471989255419408}
   currentShopbuilding: {fileID: 0}
 --- !u!1 &3468471989114591008
 GameObject:

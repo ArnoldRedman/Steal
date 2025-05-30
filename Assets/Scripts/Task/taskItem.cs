@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,40 @@ public class taskItem : MonoBehaviour
 
     public TaskItemData taskItemData;//任务的数据
     public NumDemandData currentDemandData;//需求数据
+
+    private void Start()
+    {
+        EventCenter.Instance.AddEventListener(GameEvent.建造物数量变化,UpdateNumData);
+        EventCenter.Instance.AddEventListener(GameEvent.金币发生改变,UpdateNumData);
+    }
+
+    private void OnDestroy()
+    {
+        EventCenter.Instance.RemoveEventListener(GameEvent.建造物数量变化,UpdateNumData);
+        EventCenter.Instance.RemoveEventListener(GameEvent.金币发生改变,UpdateNumData);
+    }
+
+    /// <summary>
+    /// 任务结束的时候执行的方法
+    /// </summary>
+    public void TaskOver()
+    {
+        taskItemData.isEnd = true;
+        GameManager.instance.taskItemDict[taskItemData.id].isEnd = true;
+    }
+
+    /// <summary>
+    /// 任务完成执行的方法
+    /// </summary>
+    public void TaskFinish()
+    {
+        taskItemData.isFinished = true;
+        GameManager.instance.taskItemDict[taskItemData.id].isFinished = true;
+        //更新图标
+        UpdateCheckIcon();
+        //执行任务完成的事件
+        EventCenter.Instance.EventTrigger(GameEvent.任务完成事件);//有可能做完这个任务所有任务都完成了 触发等级切换事件
+    }
 
     /// <summary>
     /// 更新任务数据的方法 在创建任务的时候调用
@@ -80,6 +115,71 @@ public class taskItem : MonoBehaviour
     /// </summary>
     private void UpdateNumData()
     {
-        
+        if (currentDemandData == null)
+        {
+            Debug.LogError("currentDemandData为空!");
+            return;
+        }
+        // 去除可能的空格
+        string itemType = currentDemandData.itemType?.Trim();
+
+        //判断监听的物体的类型  金币  建造物  其他
+        switch (itemType)
+        {
+            case "building":
+
+                //拿到对应建造物的数量
+                BuildItemData build = GameManager.instance.buildItemDict[currentDemandData.itemId];
+
+
+                // 检查buildItemDict是否包含这个key
+                if (!GameManager.instance.buildItemDict.ContainsKey(currentDemandData.itemId))
+                {
+                    Debug.LogError($"buildItemDict中不包含key: {currentDemandData.itemId}");
+                    return;
+                }
+
+
+                //通过建造物的id找到当前建造的字典
+                int num = 0;
+                if (!BuildController.Instance.currentBuildingDict.ContainsKey(build.id) || BuildController.Instance.currentBuildingDict[build.id].Count == 0)
+                {
+                    num = 0;
+                }
+                else
+                {
+                    //拿到建造物的数量
+                    num = BuildController.Instance.currentBuildingDict[build.id].Count;
+                }
+                //更新文本信息
+                currentCountText.text = num.ToString();
+                currentDemandData.currentNum = num;
+                GameManager.instance.GetNumDemandData(currentDemandData.id).currentNum = num;
+                //任务要求达成 任务还没有结束
+                if (num >= currentDemandData.itemNum && !taskItemData.isEnd)
+                {
+                    //触发任务结束的事件
+                    EventCenter.Instance.EventTrigger<taskItem>(GameEvent.任务结束事件,this);
+                }
+                
+                break;
+            
+            case "coin":
+                
+                currentCountText.text = GameManager.instance.CurrPlayerData.Coin.ToString();
+                currentDemandData.currentNum = (int)GameManager.instance.CurrPlayerData.Coin;
+                GameManager.instance.GetNumDemandData(currentDemandData.id).currentNum = currentDemandData.currentNum;
+                if (currentDemandData.currentNum >= currentDemandData.itemNum && !taskItemData.isEnd)
+                {
+                    //任务结束事件
+                    EventCenter.Instance.EventTrigger<taskItem>(GameEvent.任务结束事件,this);
+                }
+                
+                break;
+
+            default:
+                Debug.LogError($"未知的物品类型: '{itemType}'");
+                break;
+        }
     }
 }

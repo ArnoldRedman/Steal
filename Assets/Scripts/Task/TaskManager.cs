@@ -24,12 +24,16 @@ public class TaskManager : UnitySingleTon<TaskManager>
     private void Start()
     {
         EventCenter.Instance.AddEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
+        EventCenter.Instance.AddEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
+        EventCenter.Instance.AddEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
         //Init();
     }
 
     private void OnDestroy()
     {
         EventCenter.Instance.RemoveEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
+        EventCenter.Instance.RemoveEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
+        EventCenter.Instance.RemoveEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
     }
 
     private void Init()
@@ -83,5 +87,39 @@ public class TaskManager : UnitySingleTon<TaskManager>
         GameManager.instance.taskItemDict[id].isStarted = true;
         //触发任务开始事件 主线任务和支线任务面板执行相应的更新方法
         EventCenter.Instance.EventTrigger<string>(GameEvent.任务开始事件,id);
+    }
+
+    /// <summary>
+    /// 触发完成任务后的奖励
+    /// </summary>
+    public void JiangLi(taskItem taskItem)
+    {
+        if (taskItem == null)
+        {
+            return;
+        }
+        
+        taskItem.TaskOver();//任务结束
+        //领取奖励
+        UIManager.Instance.openPanel<TipPanel>().UpdateTipText("完成任务获得任务奖励");
+        //任务完成
+        taskItem.TaskFinish();
+        
+    }
+
+    /// <summary>
+    /// 核对更新等级的方法 当任务事件触发的时候会调用 判断档期啊所有任务是否都完成了
+    /// </summary>
+    public void CheckUpdateGrade()
+    {
+        foreach (var taskItem in mainTaskItemDict.Values)
+        {
+            if (taskItem.taskItemData.isFinished == false)
+            {
+                return;
+            }
+        }
+
+        GameManager.instance.CurrPlayerData.GameLevel++;
     }
 }

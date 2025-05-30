@@ -129,7 +129,7 @@ public class TaskItemData
 {
     public string id;//任务id
     public bool isStarted;//任务是否进行中 如果开始就要添加到对应任务UI中
-    public string isEnd;//任务是否完成，完成触发奖励
+    public bool isEnd;//任务是否完成，完成触发奖励
     public bool isFinished;//触发奖励后显示任务已完成
     [JsonConverter(typeof(ArrayToDictionaryConverter<string,string>))]
     public Dictionary<string, string> demandDict;//需求字典，键为需求类型 值为需求id

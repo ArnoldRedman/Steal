@@ -45,14 +45,26 @@ public class ShopDetailPanel : BasePanel
     public GameObject BuyItemCotent;
     [Header("卖出物品的列表面板")]
     public GameObject SellItemPanel;
+    [Header("拆除按钮")]
+    public Button removeBtn;
     [HideInInspector]//当前的商店建造物
     public Shop currentShopbuilding;
 
     private void OnEnable()
     {
+        removeBtn.onClick.AddListener(() =>
+        {
+            BuildController.Instance.RemoveBuilding(currentShopbuilding.buildid,currentShopbuilding);
+        });
         StartCoroutine(DelayedLayoutUpdate());
         Init();
         EventCenter.Instance.AddEventListener(GameEvent.日期时间每日更新事件,UpdateEveryDay);
+        EventCenter.Instance.AddEventListener(GameEvent.拆除建造物,chaichu);
+    }
+
+    private void chaichu()
+    {
+        UIManager.Instance.closePanel<ShopDetailPanel>();
     }
 
     /// <summary>
@@ -177,5 +189,6 @@ public class ShopDetailPanel : BasePanel
     { 
         StopCoroutine(DelayedLayoutUpdate());
         EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件,UpdateEveryDay);
+        EventCenter.Instance.RemoveEventListener(GameEvent.拆除建造物,chaichu);
     }
 }

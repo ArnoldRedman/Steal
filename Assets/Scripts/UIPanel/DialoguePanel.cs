@@ -39,6 +39,10 @@ public class DialoguePanel : BasePanel
         //判断任务id 如果有任务就要去接收任务了
         //任务的触发条件有可能是剧情对话结束后发布的任务
         //也有可能是玩家在选项中自己选定的任务
+        if (taskId != "0")
+        {
+            TaskManager.Instance.CreateNewTask(taskId);
+        }
 
         //当前就是最后一句话 没有下一条语句了
         if (id == "0")
@@ -59,7 +63,7 @@ public class DialoguePanel : BasePanel
         dialogueText.text = "";
         //DOTween的DoText可以让字符显示出来具有打字机的效果
         dialogueText.DOText(currentDialogueData.dialogueContent, //需要显示的字符串
-            currentDialogueData.dialogueContent.Length * 0.17f //持续事件，长度*0.3f,相当于每个字是0.3s显示完
+            currentDialogueData.dialogueContent.Length * 0.13f //持续事件，长度*0.3f,相当于每个字是0.3s显示完
         ).SetEase(Ease.Linear).OnComplete(FinishText);//效果结束之后的回调函数
     }
 

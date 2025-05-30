@@ -37,6 +37,8 @@ public class BuildItem : MonoBehaviour
             GameObject obj = ResMgr.Instance.load<GameObject>($"Ground/{CurrData.prefab}",BuildController.Instance.currGround.transform);
             obj.name = "Building";//统一命名为Building，可以通过这个名字拿到相应组件
             obj.transform.localScale = Vector3.one;
+            //添加到建造字典中
+            BuildController.Instance.AddBuilding(CurrData.id,obj.GetComponent<BuildItemBase>());
             EventCenter.Instance.EventTrigger(GameEvent.建造物品成功);//建造物品成功
             //更改土地状态为2
             BuildController.Instance.currGround.groundPropertyData.State = 2;

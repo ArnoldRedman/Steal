@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 //建造模块
@@ -7,6 +8,9 @@ public class BuildController : UnitySingleTon<BuildController>
     [HideInInspector] public GroundProperties currGround;
     public GameObject currSelectedTip;
 
+    //建造物字典 保存当前所有建造物
+    public Dictionary<string,List<BuildItemBase>> currentBuildingDict = new Dictionary<string,List<BuildItemBase>>();
+    
     private void Start()
     {
         EventCenter.Instance.AddEventListener<float>(GameEvent.土地状态变化, StateChange);
@@ -15,6 +19,52 @@ public class BuildController : UnitySingleTon<BuildController>
     private void OnDestroy()
     {
         EventCenter.Instance.RemoveEventListener<float>(GameEvent.土地状态变化, StateChange);
+    }
+
+    /// <summary>
+    /// 添加建造物
+    /// </summary>
+    /// <param name="id">建造物的id</param>
+    /// <param name="buildItem">建造对象</param>
+    public void AddBuilding(string id, BuildItemBase buildItem)
+    {
+        //有可能是第一次添加这个建造物
+        if (!currentBuildingDict.ContainsKey(id))
+        {
+            currentBuildingDict.Add(id,new List<BuildItemBase>());
+        }
+
+        if (!currentBuildingDict[id].Contains(buildItem))
+        {
+            //新的建造物
+            currentBuildingDict[id].Add(buildItem);
+            Debug.Log($"建造物{id}的数量为{currentBuildingDict[id].Count}");
+            EventCenter.Instance.EventTrigger(GameEvent.建造物数量变化);
+        }
+    }
+
+    /// <summary>
+    /// 移除建造物
+    /// </summary>
+    /// <param name="id">建造物id</param>
+    /// <param name="buildItem"></param>
+    public void RemoveBuilding(string id, BuildItemBase buildItem)
+    {
+        if (currentBuildingDict.ContainsKey(id))
+        {
+            if (currentBuildingDict[id].Contains(buildItem))
+            {
+                currentBuildingDict[id].Remove(buildItem);//移除建造物
+                //拿到当前的土地对象
+                currGround = buildItem.transform.parent.GetComponent<GroundProperties>();
+                currGround.groundPropertyData.State = 1;//拆除的时候土地状态变为1 说明购买未建造
+                Destroy(buildItem.gameObject);
+                //触发土地状态变化
+                EventCenter.Instance.EventTrigger<float>(GameEvent.土地状态变化,1);
+                EventCenter.Instance.EventTrigger(GameEvent.拆除建造物);
+                EventCenter.Instance.EventTrigger(GameEvent.建造物数量变化);
+            }
+        }
     }
 
     //土地状态变化
