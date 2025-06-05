@@ -458,6 +458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadFileBtn: {fileID: 1332661065278801826}
+  newGameBtn: {fileID: 4166999459565127782}
+  settingBtn: {fileID: 6164268831014333577}
+  exitBtn: {fileID: 2334249178650731206}
 --- !u!1 &1319276926389486181
 GameObject:
   m_ObjectHideFlags: 0

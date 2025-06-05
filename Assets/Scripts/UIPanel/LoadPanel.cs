@@ -22,13 +22,6 @@ public class LoadPanel : BasePanel
     }
 
 
-    void Start()
-    {
-
-    }
-
-
-
     private void OnDestroy()
     {
         EventCenter.Instance.RemoveEventListener(GameEvent.进度条加载, SetValue);

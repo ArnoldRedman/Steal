@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     public List<NumDemandData> numDemandList = new List<NumDemandData>();
     //任务字典
     public Dictionary<string,TaskItemData> taskItemDict = new Dictionary<string, TaskItemData>();
+    //主场景的数据
+    public MainSceneData mainSceneData;//如果是新开的游戏 那么没有主场景的数据
 
     private void Awake()
     {
@@ -46,10 +49,19 @@ public class GameManager : MonoBehaviour
         //UIManager.Instance.openPanel<StartPanel>();
 
         //buildItemDict = JsonMgr.Instance.LoadData<List<BuildItemData>>("tbbuilditem");
-        Init();
+        //Init();
+        UIManager.Instance.openPanel<StartPanel>();
     }
 
-    private void Init()
+    private void OnDestroy()
+    {
+        EventCenter.Instance.Clear();
+    }
+
+    /// <summary>
+    /// 主场景游戏数据初始化
+    /// </summary>
+    public void MainSceneInit()
     {
         //初始化UI
         UIManager.Instance.openPanel<PlayerPropPanel>();
@@ -58,7 +70,7 @@ public class GameManager : MonoBehaviour
         //初始化时间模块
         GameTimeInit();
     }
-
+    
     private void GameTimeInit()
     {
         timerController = new TimeController();

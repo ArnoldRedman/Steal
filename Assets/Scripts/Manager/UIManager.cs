@@ -106,4 +106,12 @@ public class UIManager : UnitySingleTonMono<UIManager>
 
     }
 
+    public void ClearAllPanel()
+    {
+        foreach (var panel in UIPanelDict.Values)
+        {
+            panel.Hide();
+        }
+    }
+
 }

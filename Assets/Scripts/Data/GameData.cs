@@ -39,6 +39,8 @@ public class GroundPropertyData
     public string GroundName;
     public int Price = 200;
     public bool isShowInitPrefab;//建造了东西就要隐藏花花草草
+    //建造物id id为0表示这个地方没有建造物
+    public string buildId;
 }
 
 /// <summary>
@@ -149,4 +151,53 @@ public class NumDemandData
     public string itemType;//物品类型
     public string descripe;//物品描述
     public string description => descripe;
+}
+
+/// <summary>
+/// 普通建造物信息
+/// </summary>
+public class SampleBuildingData
+{
+    public int dangqianjieduan;//当前阶段
+    public int currentTime;//当前时间
+    public bool isOverShengzhangqi;//是否过了生长期
+    public int shouhuoTime;//收获时间
+    public bool IsMaterialEnough;//材料是否充足
+    public bool canProduct;//能否建造
+    public string currentProductItemId;//当前产出物品id
+    public bool isAdult;//是否成年
+    public string groundName;//所在土地的名字
+}
+
+/// <summary>
+/// 商店建造物存档信息
+/// </summary>
+public class ShopBuildingData
+{
+    public float priceRate;//当前价格比例
+    public int level;//当前商店等级
+    public float Incom;//总收入
+    public bool isMoneyEnough;//金币是否充足
+    public string groundName;//所在土地的名字
+}
+
+/// <summary>
+/// 主场景游戏数据
+/// </summary>
+public class MainSceneData
+{
+    public string name;//存档名字
+    public string sceneName;//游戏场景的名字
+    public PlayerData playerData;//玩家信息
+    public KnapsackData knapsackData;//背包数据
+    public long ticks;//时间戳
+    public Dictionary<string,GroundPropertyData> currentGroundDict;//键为土地快的名字，值为土地信息
+    //普通建造物信息
+    public Dictionary<string,SampleBuildingData> sampleBuildingDict;//键为土地快名字，值为所建造的建造物信息
+    //商店建造物信息
+    public Dictionary<string,ShopBuildingData> shopBuildingDict;//键为土地名字，值为所建造的建造物信息
+    //任务数据
+    public Dictionary<string, TaskItemData> taskItemDataDict;//键为任务id，值为任务数据
+    //需求数据
+    public List<NumDemandData> numDemandList;
 }

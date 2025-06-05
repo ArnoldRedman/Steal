@@ -21,13 +21,6 @@ public class TaskManager : UnitySingleTon<TaskManager>
         StartCoroutine(DelayedPanelInit());
     }
 
-    private void Start()
-    {
-        EventCenter.Instance.AddEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
-        EventCenter.Instance.AddEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
-        EventCenter.Instance.AddEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
-        //Init();
-    }
 
     private void OnDestroy()
     {
@@ -36,9 +29,24 @@ public class TaskManager : UnitySingleTon<TaskManager>
         EventCenter.Instance.RemoveEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
     }
 
-    private void Init()
+    /// <summary>
+    /// 初始化任务数据
+    /// </summary>
+    public void Init()
+    {
+        EventCenter.Instance.AddEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
+        EventCenter.Instance.AddEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
+        EventCenter.Instance.AddEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
+        UpdateTask();
+    }
+
+    /// <summary>
+    /// 更新任务列表
+    /// </summary>
+    public void UpdateTask()
     {
         UpdateMainTask();
+        UpdateBranchTask();
     }
 
     private IEnumerator DelayedPanelInit()
@@ -76,6 +84,25 @@ public class TaskManager : UnitySingleTon<TaskManager>
             }
         }
 
+    }
+    
+    /// <summary>
+    /// 更新支线任务信内容
+    /// </summary>
+    public void UpdateBranchTask()
+    {
+        foreach (var taskItem in branchTaskItemDict.Values)
+        {
+            Destroy(taskItem.gameObject);
+        }
+        branchTaskItemDict.Clear();
+        foreach (var taskItem in GameManager.instance.taskItemDict.Values)
+        {
+            if (taskItem.level<=GameManager.instance.CurrPlayerData.GameLevel && taskItem.type == "支线任务")
+            {
+                CreateNewTask(taskItem.id);
+            }
+        }
     }
     
     /// <summary>
@@ -121,5 +148,38 @@ public class TaskManager : UnitySingleTon<TaskManager>
         }
 
         GameManager.instance.CurrPlayerData.GameLevel++;
+    }
+    
+    /// <summary>
+    /// 清空所有任务 
+    /// </summary>
+    public void clearAllTask()
+    {
+        ClearMainTask();
+        ClearBranchTask();  
+    }
+    
+    /// <summary>
+    /// 清空主线任务   
+    /// </summary>
+    public void ClearMainTask()
+    {
+        foreach (taskItem taskItem in mainTaskItemDict.Values)
+        {
+            Destroy(taskItem.gameObject);
+        }
+        mainTaskItemDict.Clear();   
+    }
+    
+    /// <summary>
+    /// 清空支线任务 
+    /// </summary>
+    public void ClearBranchTask()
+    {
+        foreach (taskItem taskItem in branchTaskItemDict.Values)
+        {
+            Destroy(taskItem.gameObject);
+        }        
+        branchTaskItemDict.Clear(); 
     }
 }
