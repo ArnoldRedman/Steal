@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ba8c698-d4b4-47e9-9dc4-8c3ad948c32c" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steal/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steal/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steal/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steal/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vsconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.vsconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtRes/Suriyun/Script/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtRes/Suriyun/Script/AnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtRes/UI/FloatBrown.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtRes/UI/FloatBrown.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtRes/UI/Icon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtRes/UI/UI1/beijing 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtRes/UI/UI1/beijing 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HasBuy.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HasBuy.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Tip.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Tip.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model/Mianhua.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model/Mianhua.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/AlpacaRanch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/AlpacaRanch.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/ChickenPasture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/ChickenPasture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/CowPasture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/CowPasture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/Famuchang.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/Famuchang.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/House.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/MaterialFactory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/MaterialFactory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/MianhuaFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/MianhuaFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/MucaoFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/MucaoFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/PingguoFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/PingguoFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/SericultureFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/SericultureFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/Shack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/Shack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/Shop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/Shop.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/ShucaiFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/ShucaiFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/TextileMill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/TextileMill.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/XiaomaiFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/XiaomaiFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/YaocaoFarm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/YaocaoFarm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ground/Zhimuchang.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Ground/Zhimuchang.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HasBuyTip.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/HasBuyTip.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Icon.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Music/BG/bg.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Music/BG/bg.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprite.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Apple.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Attackpotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Attackpotion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Berry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Berry.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Cloth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Cloth.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Clothes1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Clothes1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Clothes2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Clothes2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Coal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Coal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Copper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Copper.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Cotton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Cotton.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Egg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Egg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Feed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Feed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Gold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Gold.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Hay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Hay.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/HerbMud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/HerbMud.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Honey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Honey.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/House.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/House.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Hppotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Hppotion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Iron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Iron.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/JiDiShouDan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/JiDiShouDan.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Leather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Leather.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Milk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Milk.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Moss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Moss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Mushroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Mushroom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Mushroom2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Mushroom2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoClothes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoClothes.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoOrnament.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoOrnament.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoShoes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoShoes.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoWeapon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/NoWeapon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Panda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Panda.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Pork.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Pork.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Shack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Shack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Shop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Shop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Skirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Skirt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/SpeedPotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/SpeedPotion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Vegetable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Vegetable.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Wheat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Wheat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Wool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Wool.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Yaocao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/Yaocao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/alchemy03_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/alchemy03_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/applepie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/applepie.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor2_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor2_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor6_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor6_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor7_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/armor7_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots3_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots3_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots3_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots3_05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots4_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/boots4_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/buxie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/buxie.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/buyi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/buyi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/canbaobao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/canbaobao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/cansi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/cansi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/carrot_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/carrot_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chengshuijing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chengshuijing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chicken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chicken.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chuang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/chuang.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/coin_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/coin_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/cube_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/cube_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/dengzi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/dengzi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/feiliao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/feiliao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/hongguang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/hongguang.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/houbuyi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/houbuyi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/huangjinfen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/huangjinfen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/ice_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/ice_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/ingot1_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/ingot1_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jewel_06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jewel_06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jiangupijia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jiangupijia.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jidanshucaimian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jidanshucaimian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jieshibupi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jieshibupi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jin.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinfu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinfu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jingangshi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jingangshi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jingshi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jingshi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinjian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinjian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinjiezhi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jinjiezhi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jixingjia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/jixingjia.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/longzhiyi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/longzhiyi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/lvbaoshi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/lvbaoshi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maoliao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maoliao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maopi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maopi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maopi1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/maopi1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianbao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianbao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianfen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianfen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianhua.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mianhua.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/miemiejiao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/miemiejiao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/muban.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/muban.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mutou.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/mutou.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/niu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/niu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/orange_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/orange_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/pige.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/pige.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/pixue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/pixue.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/potion2_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/potion2_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/potion3_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/potion3_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/roupaimian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/roupaimian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/shafa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/shafa.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sichou.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sichou.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sichoupao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sichoupao.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/siyanglong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/siyanglong.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sphere_05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sword07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sword07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sword08_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/sword08_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tie.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tiefu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tiefu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tiejian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tiejian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tong.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongfu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongfu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongjian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongjian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongjiezhi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/tongjiezhi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/treasure01_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/treasure01_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/xiaomai.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/xiaomai.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yangtuo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yangtuo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yin.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinfu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinfu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinjian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinjian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinjiezhi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yinjiezhi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yuangujian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yuangujian.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yuangujie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/yuangujie.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/zhuozi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/zhuozi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/出售商品.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/出售商品.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/售卖商品.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/售卖商品.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/打钩.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/打钩.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/未标题-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/未标题-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/皇冠.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/皇冠.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级一.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级一.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级三.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级三.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级二.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/等级二.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/表头-下拉箭头图标.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprite/表头-下拉箭头图标.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ArchiveFileItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ArchiveFileItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ArchiveFileItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ArchiveFileItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/BuildItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/BuildItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/BuildItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/BuildItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/BuyItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/BuyItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/BuyItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/BuyItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/OptionItemBtn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/OptionItemBtn.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/OptionItemBtn.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/OptionItemBtn.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ProductItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ProductItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ProductItemDetail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ProductItemDetail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ProductItemDetail.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ProductItemDetail.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/SellItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/SellItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemDetailPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemDetailPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemDetailPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemDetailPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemsPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemsPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemsPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildItemsPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuildPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyGroundPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyGroundPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyGroundPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyGroundPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyItemCheckPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyItemCheckPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyItemCheckPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/BuyItemCheckPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/DialoguePanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/DialoguePanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/DialoguePanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/DialoguePanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/GamePausePanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/GamePausePanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/GamePausePanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/GamePausePanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/KnapsackPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/KnapsackPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/LoadFilePanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/LoadFilePanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/LoadPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/LoadPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/PauseGamePanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/PauseGamePanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/PlayerPropPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/PlayerPropPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ProductItemPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ProductItemPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ProductItemPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ProductItemPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/SaveFilePanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/SaveFilePanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ShopDetailPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ShopDetailPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ShopDetailPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/ShopDetailPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/StartPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/StartPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TaskPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TaskPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TaskPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TaskPanel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TipPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIPanel/TipPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/XiaoHaoItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/XiaoHaoItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/XiaoHaoItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/XiaoHaoItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/taskItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/taskItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/taskItem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/taskItem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UICheckSetting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UICheckSetting/UICheckConfig.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UICheckSetting/UICheckConfig.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Archive.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Archive.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Archive/ArchiveFileItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Archive/ArchiveFileItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Archive/ArchiveFileItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Archive/ArchiveFileItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/BuildItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/BuildItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/BuildItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/BuildItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/BuyItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/BuyItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/BuyItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/BuyItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/AlpacaRanch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/AlpacaRanch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/AlpacaRanch.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/AlpacaRanch.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/BuildItemBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/BuildItemBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/BuildItemBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/BuildItemBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ChickenPasture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ChickenPasture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ChickenPasture.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ChickenPasture.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/CowPasture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/CowPasture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/CowPasture.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/CowPasture.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Factory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Factory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Factory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/HayFarm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/HayFarm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MaterialFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MaterialFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MaterialFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MaterialFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MianhuaFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MianhuaFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MianhuaFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MianhuaFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MucaoFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MucaoFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MucaoFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/MucaoFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Pasture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Pasture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Pasture.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Pasture.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/PingguoFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/PingguoFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/PingguoFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/PingguoFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ProductItemDetail.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ProductItemDetail.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/SericultureFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/SericultureFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/SericultureFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/SericultureFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Shop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/Shop.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ShucaiFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ShucaiFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ShucaiFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/ShucaiFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/XiaomaiFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/XiaomaiFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/XiaomaiFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/XiaomaiFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/YaocaoFarm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/YaocaoFarm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/YaocaoFarm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/Contruction/YaocaoFarm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/GroundProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/GroundProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/GroundProperties.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/GroundProperties.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/ProductItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/ProductItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/ProductItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/ProductItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/XiaoHaoItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/XiaoHaoItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Build/XiaoHaoItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Build/XiaoHaoItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/BuildController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/BuildController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/BuildController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/BuildController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/CameraController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/TimeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/TimeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/TimeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/TimeController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/GameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/GameData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/GameData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/OptionDialogueItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/OptionDialogueItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/OptionDialogueItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/OptionDialogueItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enum.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enum/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enum/GameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/GameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/EventCenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/EventCenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/EventCenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/EventCenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/InputManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/InputManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/JsonMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/JsonMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/JsonMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/JsonMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MonoMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MonoMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MusicMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MusicMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MusicMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MusicMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/PoolMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/PoolMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/PoolMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/PoolMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/ResMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/ResMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/ResMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/ResMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SceneMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SceneMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SceneMgr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SceneMgr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SingleTon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SingleTon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SingleTon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SingleTon.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/UIManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingleTonMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingleTonMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingleTonMono.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/UnitySingleTonMono.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/ArrayToDictionaryConverter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/ArrayToDictionaryConverter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/IJsonWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/IJsonWrapper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonException.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonMapper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonMockWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonMockWrapper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonReader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonReader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/JsonWriter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/Lexer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/Lexer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/Netstandard15Polyfill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/Netstandard15Polyfill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/ParserToken.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Plugins/Json/LitJson/ParserToken.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/BranchTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/BranchTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/BranchTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/BranchTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/MainTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/MainTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/MainTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/MainTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/Task.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/Task.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/Task.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/Task.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/TaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/TaskManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/TaskManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/TaskManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/TaskPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/TaskPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/taskItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/taskItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Task/taskItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Task/taskItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BasePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BasePanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BasePanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemDetailPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemDetailPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemDetailPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemDetailPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemsPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemsPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildItemsPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuildPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyGroundPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyGroundPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyGroundPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyGroundPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyItemCheckPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyItemCheckPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyItemCheckPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/BuyItemCheckPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/DialoguePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/DialoguePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/DialoguePanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/DialoguePanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/GamePausePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/GamePausePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/GamePausePanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/GamePausePanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/KnapsackPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/KnapsackPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/KnapsackPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/KnapsackPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadFilePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadFilePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadFilePanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadFilePanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/LoadPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/PlayerPropPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/PlayerPropPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/PlayerPropPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/PlayerPropPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/ShopDetailPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/ShopDetailPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/ShopDetailPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/ShopDetailPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/StartPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/StartPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/StartPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/StartPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/TipPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/TipPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIPanel/TipPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIPanel/TipPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SikiPrefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SikiPrefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SikiPrefab/Build.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SikiPrefab/Build.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbbuilditem.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbbuilditem.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbdialogueitem.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbdialogueitem.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbdialogueitem.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbdialogueitem.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbmerchantingitem.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbmerchantingitem.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbnumdemand.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbnumdemand.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbnumdemand.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbnumdemand.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbplayer.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbplayer.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbproductitem.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbproductitem.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbtask.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbtask.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/tbxiaohaoitem.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/tbxiaohaoitem.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations/TypeA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations/TypeA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations/TypeC.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Animations/TypeC.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeB.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeB.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeC.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/FBX/TypeC.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Texture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Cute Pet/Texture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack/Scripts/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Fantasy Customizable Pack/Scripts/AnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Script.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Script.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Script/Camera Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Script/Camera Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Script/Camera Scripts/MouseOrbitImproved.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Script/Camera Scripts/MouseOrbitImproved.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/Materials/Snake.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/Materials/Snake.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/Snake.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/Snake.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/Texture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/Texture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Suriyun/Snake/Texture/Snake.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Suriyun/Snake/Texture/Snake.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Models.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Models/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Models/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Prefabs/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects/TessellationShaders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects/TessellationShaders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects/TessellationShaders/Shaders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Z ! Voxel BlocksAssets/Standard Assets/Effects/TessellationShaders/Shaders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cehua.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cehua.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#Player.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#Player.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#dialogueitem.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#dialogueitem.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#numdemand.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#numdemand.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#xiaohaoitem.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/LubanConfig/MiniTemplate/Datas/#xiaohaoitem.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ArnoldRedman"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ArnoldRedman/Steal.git",
+    "accountId": "2ab88cbf-c69d-47aa-960f-609aa09bea79"
+  }
+}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2yXVIJaPSiyF4kL0VoDqc1qwXXD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
+    <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="F:\Unity\Hub\Editor\2021.3.23f1c1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath F:\UnityProject\Steal -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="F:\UnityProject\Steal" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="单元测试(批处理模式)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="F:\Unity\Hub\Editor\2021.3.23f1c1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath F:\UnityProject\Steal -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="F:\UnityProject\Steal" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
+    <configuration name="附加到 Unity 编辑器并运行" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0ba8c698-d4b4-47e9-9dc4-8c3ad948c32c" name="更改" comment="" />
+      <created>1747922674336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747922674336</updated>
+      <workItem from="1747922676519" duration="33000" />
+      <workItem from="1749980825231" duration="1341000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

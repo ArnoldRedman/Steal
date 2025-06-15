@@ -2,184 +2,182 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 /// <summary>
-/// 任务管理器 创建新任务 当等级变化时更新主线任务
-/// 主线任务
-/// 支线任务
+/// 任务管理器  主线任务 支线任务 领取任务  
 /// </summary>
 public class TaskManager : UnitySingleTon<TaskManager>
 {
-    public Dictionary<string,taskItem> mainTaskItemDict = new Dictionary<string,taskItem>();//主线任务字典
-    public Dictionary<string,taskItem> branchTaskItemDict = new Dictionary<string,taskItem>();//支线任务字典
-
+    public Dictionary<string, TaskItem> mainTaskDict=new Dictionary<string, TaskItem>();//主线任务字典 
+    public Dictionary<string, TaskItem> branchDict=new Dictionary<string, TaskItem>();//支线任务字典  
     public override void Awake()
     {
         base.Awake();
 
-        // 延迟一帧初始化，确保所有单例已就绪
-        StartCoroutine(DelayedPanelInit());
     }
 
+    void Start()
+    {
+       
+    }
+/// <summary>
+/// 清空所有任务 
+/// </summary>
+    public void clearAllTask()
+    {
+        clearMainTask();
+        clearBranchTask();  
+    }
+/// <summary>
+/// 清空主线任务   
+/// </summary>
+    public void clearMainTask()
+    {
+        foreach (TaskItem taskItem in mainTaskDict.Values)
+        {
+            Destroy(taskItem.gameObject);
+        }
+        mainTaskDict.Clear();   
+    }
+/// <summary>
+/// 清空支线任务 
+/// </summary>
+    public void clearBranchTask()
+    {
+        foreach (TaskItem taskItem in branchDict.Values)
+        {
+            Destroy(taskItem.gameObject);
+        }        
+        branchDict.Clear(); 
+    }
+
+    
+/// <summary>
+/// 初始化任务数据 
+/// </summary>
+    public void Init()
+    {
+        EventCenter.Instance.AddEventListener(GameEvent.玩家等级变化,UpdateMainTask);
+        EventCenter.Instance.AddEventListener<TaskItem>(GameEvent.任务结束事件,jiangli);
+        EventCenter.Instance.AddEventListener(GameEvent.任务完成事件,checkUpdateGrade);
+        UpdateTask();
+
+    }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
-        EventCenter.Instance.RemoveEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
-        EventCenter.Instance.RemoveEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
+        EventCenter.Instance.RemoveEventListener(GameEvent.玩家等级变化,UpdateMainTask);
+        EventCenter.Instance.RemoveEventListener<TaskItem>(GameEvent.任务结束事件,jiangli);
+        EventCenter.Instance.RemoveEventListener(GameEvent.任务完成事件,checkUpdateGrade);
+            
     }
-
-    /// <summary>
-    /// 初始化任务数据
-    /// </summary>
-    public void Init()
-    {
-        EventCenter.Instance.AddEventListener(GameEvent.玩家等级发生变化,UpdateMainTask);
-        EventCenter.Instance.AddEventListener<taskItem>(GameEvent.任务结束事件,JiangLi);
-        EventCenter.Instance.AddEventListener(GameEvent.任务完成事件,CheckUpdateGrade);
-        UpdateTask();
-    }
-
-    /// <summary>
-    /// 更新任务列表
-    /// </summary>
+/// <summary>
+/// 更新任务内容 
+/// </summary>
     public void UpdateTask()
     {
         UpdateMainTask();
         UpdateBranchTask();
     }
-
-    private IEnumerator DelayedPanelInit()
-    {
-        yield return null; // 等待一帧
-        UIManager.Instance.openPanel<TaskPanel>();
-        // 等待面板完全初始化
-        yield return new WaitForEndOfFrame();
-    
-        Init(); // 在面板初始化后初始化任务
-    }
-
     /// <summary>
-    /// 等级发生变化后更新主线任务信息 初始时更新一次
-    /// </summary>
+/// 更新主线任务内容 
+/// </summary>
     public void UpdateMainTask()
     {
-        //拿到下一个等级编号
-        int level = GameManager.instance.CurrPlayerData.GameLevel + 1;
-        //显示等级图标 MARKER
-        
-        //遍历主线任务字典，删除之前的任务信息
-        foreach (var taskItem in mainTaskItemDict.Values)
+        //玩家等级变化
+        int level = GameManager.Instance.playerData.GameLevel+1;
+        //显示等级图标 
+        UIManager.Instance.openPanel<GradePanel>();
+        foreach (var taskItem in mainTaskDict.Values)
         {
             Destroy(taskItem.gameObject);
         }
-        //清空主线任务字典
-        mainTaskItemDict.Clear();
-        //添加新等级的任务到主线任务字典中
-        foreach (var taskItem in GameManager.instance.taskItemDict.Values)
+        mainTaskDict.Clear();
+        foreach (var taskItem in GameManager.Instance.taskItemDict.Values)
         {
             if (taskItem.level == level && taskItem.type == "主线任务")
             {
-                CreateNewTask(taskItem.id);
+                creatNewTask(taskItem.id);
             }
         }
-
+        
     }
-    
-    /// <summary>
-    /// 更新支线任务信内容
-    /// </summary>
+/// <summary>
+/// 更新支线任务信内容
+/// </summary>
     public void UpdateBranchTask()
     {
-        foreach (var taskItem in branchTaskItemDict.Values)
+        foreach (var taskItem in branchDict.Values)
         {
             Destroy(taskItem.gameObject);
         }
-        branchTaskItemDict.Clear();
-        foreach (var taskItem in GameManager.instance.taskItemDict.Values)
+        branchDict.Clear();
+        foreach (var taskItem in GameManager.Instance.taskItemDict.Values)
         {
-            if (taskItem.level<=GameManager.instance.CurrPlayerData.GameLevel && taskItem.type == "支线任务")
+            if (taskItem.level<=GameManager.Instance.playerData.GameLevel && taskItem.type == "支线任务")
             {
-                CreateNewTask(taskItem.id);
+                creatNewTask(taskItem.id);
             }
         }
     }
     
+    
     /// <summary>
-    /// 创建新任务 将任务项添加到对应的任务列表中 比如主线任务和支线任务面板
-    /// </summary>
-    public void CreateNewTask(string id)
+/// 创建新任务  更改任务的开始状态为真 触发任务开始状态事件  
+/// </summary>
+    public void creatNewTask(string id)
     {
-        //更改任务信息的开始状态
-        GameManager.instance.taskItemDict[id].isStarted = true;
-        //触发任务开始事件 主线任务和支线任务面板执行相应的更新方法
+        TaskItemData taskItem = GameManager.Instance.taskItemDict[id];
+        if(taskItem==null)return;
+        if (taskItem.type == "主线任务")
+        {
+        //更改游戏管理器中任务字典中任务开始状态
+        GameManager.Instance.taskItemDict[id].isStarted=true;
+        //触发任务开始事件 
         EventCenter.Instance.EventTrigger<string>(GameEvent.任务开始事件,id);
-    }
-
-    /// <summary>
-    /// 触发完成任务后的奖励
-    /// </summary>
-    public void JiangLi(taskItem taskItem)
-    {
-        if (taskItem == null)
+        }else if (taskItem.type == "支线任务"&&taskItem.isStarted)
         {
-            return;
+            //触发任务开始事件 
+            EventCenter.Instance.EventTrigger<string>(GameEvent.任务开始事件,id);
         }
-        
-        taskItem.TaskOver();//任务结束
-        //领取奖励
+    }
+/// <summary>
+/// 领取支线任务 
+/// </summary>
+/// <param name="id"></param>
+    public void creatNewBranchTask(string id)
+    {
+        UIManager.Instance.openPanel<TipPanel>().UpdateTipText("领取任务成功");
+        GameManager.Instance.taskItemDict[id].isStarted=true;
+        creatNewTask(id);
+    } 
+    
+/// <summary>
+/// 奖励方法  任务完成后会触发该方法  
+/// </summary>
+/// <param name="id">任务id</param>
+    public void jiangli(TaskItem taskItem)
+    {
+        if(taskItem==null)return;
+        taskItem.taskOver();//任务结束
         UIManager.Instance.openPanel<TipPanel>().UpdateTipText("完成任务获得任务奖励");
-        //任务完成
-        taskItem.TaskFinish();
-        
+        //任务完成触发任务完成 这里任务结束了要领取奖励之后才算任务完成 
+        taskItem.FinishTask();
     }
 
-    /// <summary>
-    /// 核对更新等级的方法 当任务事件触发的时候会调用 判断档期啊所有任务是否都完成了
-    /// </summary>
-    public void CheckUpdateGrade()
+/// <summary>
+/// 核对更新等级的方法 判断当前等级所有任务是否都完成  如果完成则升级游戏等级    
+/// </summary>
+    public void checkUpdateGrade()
     {
-        foreach (var taskItem in mainTaskItemDict.Values)
+        foreach (var taskItem in mainTaskDict.Values)
         {
-            if (taskItem.taskItemData.isFinished == false)
-            {
-                return;
-            }
+            if(!taskItem.taskItemData.isFinished)return;
         }
-
-        GameManager.instance.CurrPlayerData.GameLevel++;
+            
+        GameManager.Instance.playerData.GameLevel++;
     }
-    
-    /// <summary>
-    /// 清空所有任务 
-    /// </summary>
-    public void clearAllTask()
+    void Update()
     {
-        ClearMainTask();
-        ClearBranchTask();  
-    }
-    
-    /// <summary>
-    /// 清空主线任务   
-    /// </summary>
-    public void ClearMainTask()
-    {
-        foreach (taskItem taskItem in mainTaskItemDict.Values)
-        {
-            Destroy(taskItem.gameObject);
-        }
-        mainTaskItemDict.Clear();   
-    }
-    
-    /// <summary>
-    /// 清空支线任务 
-    /// </summary>
-    public void ClearBranchTask()
-    {
-        foreach (taskItem taskItem in branchTaskItemDict.Values)
-        {
-            Destroy(taskItem.gameObject);
-        }        
-        branchTaskItemDict.Clear(); 
+      
     }
 }

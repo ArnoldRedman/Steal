@@ -1,6 +1,9 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class DialoguePanel : BasePanel
 {
@@ -12,6 +15,10 @@ public class DialoguePanel : BasePanel
     [Header("对话的容器")] public GameObject dialogueContent;
     public DialogueItemData currentDialogueData;
 
+    private void Start()
+    {
+     
+    }
     private void OnEnable()
     {
         StartCoroutine(DelayedLayoutUpdate());
@@ -19,35 +26,36 @@ public class DialoguePanel : BasePanel
         {
             UpdateNextDialogue(currentDialogueData.nextId,currentDialogueData.taskId);
         });
-        
-        EventCenter.Instance.AddEventListener<string,string>(GameEvent.切换到下一条对话语句,UpdateNextDialogue);
+        EventCenter.Instance.AddEventListener<string,string>(GameEvent.切换下一条对话语句,UpdateNextDialogue);
     }
 
     private void OnDisable()
     {
         StopCoroutine(DelayedLayoutUpdate());
-        EventCenter.Instance.RemoveEventListener<string,string>(GameEvent.切换到下一条对话语句,UpdateNextDialogue);   
+        nextBtn.onClick.RemoveAllListeners();
+        EventCenter.Instance.RemoveEventListener<string,string>(GameEvent.切换下一条对话语句,UpdateNextDialogue);
+    }
+
+    private void Init()
+    {
+        dialogueContent.gameObject.SetActive(false);
+        options.SetActive(false);
+        nextBtn.gameObject.SetActive(false);
     }
 
     /// <summary>
-    /// 切换到下一条语句的方法
+    /// 更新下一个对话内容的方法  
     /// </summary>
     /// <param name="id">下一条语句的id</param>
-    /// <param name="taskId">当前语句发布的任务id</param>
-    public void UpdateNextDialogue(string id,string taskId = "0")
+    /// <param name="taskId">当前点到的语句的任务id</param>
+    public void UpdateNextDialogue(string id,string taskId="0")
     {
-        //判断任务id 如果有任务就要去接收任务了
-        //任务的触发条件有可能是剧情对话结束后发布的任务
-        //也有可能是玩家在选项中自己选定的任务
-        if (taskId != "0")
-        {
-            TaskManager.Instance.CreateNewTask(taskId);
-        }
-
-        //当前就是最后一句话 没有下一条语句了
+        //判断任务id 领取任务  
+        if(taskId!="0")TaskManager.Instance.creatNewBranchTask(taskId);
+        //判断是否有下一条语句 没有就关闭对话框
         if (id == "0")
         {
-            DialogueManager.Instance.currNPC = null;//对话结束了 对话对象重置
+            DialogueManager.Instance.currentNPC = null;
             UIManager.Instance.closePanel<DialoguePanel>();
             return;
         }
@@ -55,62 +63,52 @@ public class DialoguePanel : BasePanel
         Init();
         //显示对话内容
         dialogueContent.SetActive(true);
-        currentDialogueData = GameManager.instance.dialogueItemDict[id];
-        //更新对话内容
+        currentDialogueData = GameManager.Instance.dialogueItemDict[id];
+        //更新对话内容  
         nameText.text = currentDialogueData.targetName;
         icon.sprite = ResMgr.Instance.load<Sprite>("Icon/StaffIcon/" + currentDialogueData.targetIcon);
-        //更新完对话内容之后 显示选项
+        //更新选项的内容  更新选项内容是在对话内容显示结束之后才会显示选项内容 
         dialogueText.text = "";
-        //DOTween的DoText可以让字符显示出来具有打字机的效果
-        dialogueText.DOText(currentDialogueData.dialogueContent, //需要显示的字符串
-            currentDialogueData.dialogueContent.Length * 0.13f //持续事件，长度*0.3f,相当于每个字是0.3s显示完
-        ).SetEase(Ease.Linear).OnComplete(FinishText);//效果结束之后的回调函数
+        dialogueText.DOText(currentDialogueData.dialogueContent, currentDialogueData.dialogueContent.Length * 0.23f)
+            .SetEase(Ease.Linear)
+            .OnComplete(FinishText);
+        
+        
     }
-
-    /// <summary>
-    /// 文字打印结束之后执行的方法
-    /// </summary>
+/// <summary>
+/// 播放文字结束后执行的方法
+/// </summary>
     private void FinishText()
     {
-        //更新选项选项
         UpdateOptions();
     }
 
     /// <summary>
-    /// 更新选项信息
-    /// </summary>
+/// 更新选项的内容
+/// </summary>
     private void UpdateOptions()
     {
-        //添加新的选项
-        //先判断有没有选项
+        
+        for (int i = 0; i < options.transform.childCount; i++)
+        {
+            Destroy(options.transform.GetChild(i).gameObject);
+        }
+
         if (currentDialogueData.optionList.Count > 0)
         {
             nextBtn.gameObject.SetActive(false);
-            dialogueContent.gameObject.SetActive(false);
-            options.gameObject.SetActive(true);
-            //删除之前的选项
-            for (int i = 0; i < options.transform.childCount; i++)
-            {
-                Destroy(options.transform.GetChild(i).gameObject);
-            }
-            //初始化option的内容
-            //选项里面放的是对话id
+            dialogueContent.SetActive(false);
+            options.SetActive(true);
+            //初始化一下options  
             foreach (var id in currentDialogueData.optionList)
             {
-                GameObject option = ResMgr.Instance.load<GameObject>("UI/OptionItemBtn",options.transform);
+                GameObject option = ResMgr.Instance.load<GameObject>("UI/OptionItemBtn", options.transform);
                 option.GetComponent<OptionDialogueItem>().UpdateOptionData(id);
             }
         }
-        else//没有选项就显示下一句的按钮
+        else
         {
             nextBtn.gameObject.SetActive(true);
         }
-    }
-
-    private void Init()
-    {
-        dialogueContent.gameObject.SetActive(false);
-        nextBtn.gameObject.SetActive(false);
-        options.gameObject.SetActive(false);
     }
 }

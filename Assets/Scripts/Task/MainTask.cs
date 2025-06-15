@@ -4,59 +4,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 主线任务面板
-/// </summary>
 public class MainTask : Task
 {
-    [Header("要达到的等级的图标")] public Image levelIconl;
-
+    [Header("要达到的等级图标")]
+    public Image levelIcon;
     private void OnEnable()
     {
         taskType = "主线任务";
         UpdateGradeData();
-        EventCenter.Instance.AddEventListener<string>(GameEvent.任务开始事件,UpdateTaskItem);
-        EventCenter.Instance.AddEventListener(GameEvent.玩家等级发生变化,UpdateGradeData);
+        EventCenter.Instance.AddEventListener<string>(GameEvent.任务开始事件,updateTaskItem);
+        EventCenter.Instance.AddEventListener(GameEvent.玩家等级变化,UpdateGradeData);
     }
 
-    private void OnDisable()
+    public override void Start()
     {
-        EventCenter.Instance.RemoveEventListener<string>(GameEvent.任务开始事件,UpdateTaskItem);
-        EventCenter.Instance.RemoveEventListener(GameEvent.玩家等级发生变化,UpdateGradeData);
+        base.Start();       
+        
+        
     }
-
-    /// <summary>
-    /// 更新等级信息
-    /// </summary>
-    private void UpdateGradeData()
+//更新等级信息  
+    public void UpdateGradeData()
     {
-        int level = GameManager.instance.CurrPlayerData.GameLevel + 1;
+        int level = GameManager.Instance.playerData.GameLevel + 1;
         switch (level)
         {
             case 1:
-                
-                levelIconl.sprite = Resources.Load<Sprite>("Sprite/等级一");
+                levelIcon.sprite = ResMgr.Instance.load<Sprite>("Icon/等级一");
                 taskBtnText.text = "达到等级一目标";
-                
                 break;
-            
             case 2:
-                
-                levelIconl.sprite = Resources.Load<Sprite>("Sprite/等级二");
+                levelIcon.sprite = ResMgr.Instance.load<Sprite>("Icon/等级二");
                 taskBtnText.text = "达到等级二目标";
-                
                 break;
-            
             case 3:
-                
-                levelIconl.sprite = Resources.Load<Sprite>("Sprite/等级二");
-                taskBtnText.text = "达到等级二目标";
-                
+                levelIcon.sprite = ResMgr.Instance.load<Sprite>("Icon/等级三");
+                taskBtnText.text = "达到等级三目标";
                 break;
-            
             default:
                 taskBtnText.text = "当前无任务";
                 break;
         }
+    }
+    private void OnDisable()
+    {
+        EventCenter.Instance.RemoveEventListener<string>(GameEvent.任务开始事件,updateTaskItem);
+        EventCenter.Instance.RemoveEventListener(GameEvent.玩家等级变化,UpdateGradeData);
     }
 }

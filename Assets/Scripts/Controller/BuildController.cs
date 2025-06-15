@@ -1,147 +1,183 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-//建造模块
 public class BuildController : UnitySingleTon<BuildController>
 {
-    [HideInInspector] public GroundProperties currGround;
-    public GameObject currSelectedTip;
+    //当前选中的土地  
+    public GroundProperties currentGround;
 
-    //建造物字典 保存当前所有建造物
-    public Dictionary<string,List<BuildItemBase>> currentBuildingDict = new Dictionary<string,List<BuildItemBase>>();
-    
-    private void Start()
+    //选中的提示对象 
+    private GameObject selectGroundTip;
+
+    //建造字典  
+    public Dictionary<string, List<BuildItemBase>> currentBuildingDict; //当前所有建造物的字典 
+    //当前所有状态不为0的土地信息  
+    public Dictionary<string, GroundPropertyData> currentGroundDict;
+
+    public void Start()
     {
-        EventCenter.Instance.AddEventListener<float>(GameEvent.土地状态变化, StateChange);
+        currentGroundDict=new Dictionary<string, GroundPropertyData>(); 
+        //初始化建造字典信息  
+        buildingDictDataInit();
+        selectGroundTip = GameObject.Find("CurrentSelectTip");
+        EventCenter.Instance.AddEventListener<int>(GameEvent.土地状态变化, groundStateChanged);
     }
+
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener<float>(GameEvent.土地状态变化, StateChange);
+        EventCenter.Instance.RemoveEventListener<int>(GameEvent.土地状态变化, groundStateChanged);
     }
-
-    /// <summary>
-    /// 添加建造物
-    /// </summary>
-    /// <param name="id">建造物的id</param>
-    /// <param name="buildItem">建造对象</param>
-    public void AddBuilding(string id, BuildItemBase buildItem)
+    
+    
+/// <summary>
+/// 初始化建造字典信息 
+/// </summary>
+    private void buildingDictDataInit()
     {
-        //有可能是第一次添加这个建造物
-        if (!currentBuildingDict.ContainsKey(id))
+        currentBuildingDict=new Dictionary<string, List<BuildItemBase>>();
+        foreach (var data in GameManager.Instance.buildItemDict.Values)
         {
-            currentBuildingDict.Add(id,new List<BuildItemBase>());
+            currentBuildingDict.Add(data.id,new List<BuildItemBase>());
         }
-
-        if (!currentBuildingDict[id].Contains(buildItem))
-        {
-            //新的建造物
-            currentBuildingDict[id].Add(buildItem);
-            Debug.Log($"建造物{id}的数量为{currentBuildingDict[id].Count}");
-            EventCenter.Instance.EventTrigger(GameEvent.建造物数量变化);
-        }
+       
     }
-
-    /// <summary>
-    /// 移除建造物
-    /// </summary>
-    /// <param name="id">建造物id</param>
-    /// <param name="buildItem"></param>
-    public void RemoveBuilding(string id, BuildItemBase buildItem)
+/// <summary>
+/// 添加建筑物
+/// </summary>
+/// <param name="id">建筑物id</param>
+/// <param name="buildItem">建筑物对象</param>
+    public void addBuilding(string id, BuildItemBase buildItem)
     {
         if (currentBuildingDict.ContainsKey(id))
         {
+            //判断建筑物中没有该建筑对象，没有的话就添加
+            if (!currentBuildingDict[id].Contains(buildItem))
+            {
+                currentBuildingDict[id].Add(buildItem);
+                EventCenter.Instance.EventTrigger(GameEvent.建造物数量变化);
+            }
+            
+        }
+    }
+/// <summary>
+/// 移除建筑物  
+/// </summary>
+/// <param name="id"></param>
+/// <param name="buildItem"></param>
+    public void removeBuilding(string id,BuildItemBase buildItem)
+    {
+        if (currentBuildingDict.ContainsKey(id))
+        {
+            //判断建筑物中是否有该建筑对象，有的话就移除
             if (currentBuildingDict[id].Contains(buildItem))
             {
-                currentBuildingDict[id].Remove(buildItem);//移除建造物
-                //拿到当前的土地对象
-                currGround = buildItem.transform.parent.GetComponent<GroundProperties>();
-                currGround.groundPropertyData.State = 1;//拆除的时候土地状态变为1 说明购买未建造
-                Destroy(buildItem.gameObject);
-                //触发土地状态变化
-                EventCenter.Instance.EventTrigger<float>(GameEvent.土地状态变化,1);
+                currentBuildingDict[id].Remove(buildItem);
+                currentGround = buildItem.transform.parent.GetComponent<GroundProperties>();
+                currentGround.groundProperty.State=1;
+                Destroy(buildItem.gameObject);//销毁建造对象
+                EventCenter.Instance.EventTrigger<int>(GameEvent.土地状态变化,1);
                 EventCenter.Instance.EventTrigger(GameEvent.拆除建造物);
                 EventCenter.Instance.EventTrigger(GameEvent.建造物数量变化);
             }
         }
     }
-
-    //土地状态变化
-    private void StateChange(float value)
+    private void groundStateChanged(int state)
     {
-        switch (value)
+        switch (state)
         {
-            case 0://隐藏购买的提示物体
-
-                break;
-
-            case 1://已经购买，已经购买的提示物体，隐藏InitPrefab
-                if (currGround.HasBuyObj == null)
+            case 1:
+                //显示已购买的物体  
+                GameObject hasBuyObj = ResMgr.Instance.load<GameObject>("HasBuyGroundObj", currentGround.transform);
+                hasBuyObj.transform.localPosition = new Vector3(0, 0.5f, 0);
+                //隐藏初始化的预制体 比如土地上原有的草木  
+                currentGround.transform.Find("InitPrefab").gameObject.SetActive(false);
+                currentGround.groundProperty.isShowInitPrefab = false;
+                currentGround.groundProperty.buildId = "0";
+                //添加已购买土地的信息 
+                if (currentGroundDict.ContainsKey(currentGround.name))
                 {
-                    GameObject hasBuyObj = ResMgr.Instance.load<GameObject>("HasBuyTip", currGround.transform);
-                    currGround.HasBuyObj = hasBuyObj;
-                    hasBuyObj.transform.localScale = Vector3.one * 0.3f;
-                    hasBuyObj.transform.localPosition = Vector3.up * 0.5f;
+                    currentGroundDict[currentGround.name] = currentGround.groundProperty;
                 }
-                currGround.HasBuyObj.SetActive(true);
-                //隐藏InitPrefab
-                currGround.InitPrefab.SetActive(false);
-                currGround.groundPropertyData.isShowInitPrefab = false;
-                //隐藏购买窗口
-                UIManager.Instance.closePanel<BuyGroundPanel>();
-                break;
-
-            case 2://已经建造了，隐藏已购买的提示物品
-                GameObject obj = currGround.transform.Find("HasBuyTip").gameObject;
-                if (obj!=null)
+                else
                 {
-                    Destroy(obj);
+                    currentGroundDict.Add(currentGround.name,currentGround.groundProperty);
                 }
+                break;
+            case 2:
+                //隐藏已购买显示的预制体克隆的对象   
+                Transform Obj = currentGround.transform.Find("HasBuyGroundObj");
+                if (Obj != null) Destroy(Obj.gameObject);
+                //添加已购买的土地
+                if (currentGroundDict.ContainsKey(currentGround.name))
+                {
+                    currentGroundDict[currentGround.name] = currentGround.groundProperty;
+                }
+                else
+                {
+                    currentGroundDict.Add(currentGround.name,currentGround.groundProperty);
+                }
+                break;
+            case 0:
+                //显示初始化的预制体 比如土地上原有的草木  
+                currentGround.transform.Find("InitPrefab").gameObject.SetActive(true);
+                currentGround.groundProperty.isShowInitPrefab = true;
+                //移除土地信息    
+                if(currentGroundDict.ContainsKey(currentGround.name)) currentGroundDict.Remove(currentGround.name);
                 break;
         }
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        //判断是否在UI层上，为true直接return 不去执行射线的碰撞检测
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
+        //判断当前射线是否在UI层 如果UI上就直接return  
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+        //编写购买的功能  
+        //从屏幕点发射射线 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1000))
+        //碰撞信息
+        RaycastHit hitInfo;
+        //射线和土地的碰撞检测  
+        if (Physics.Raycast(ray, out hitInfo, 1000))
         {
-            if (hit.collider.CompareTag("Ground"))
+            //判断碰撞的物体是不是土地
+            if (hitInfo.collider.tag == "Ground")
             {
-                currSelectedTip.SetActive(true);
-                currGround = hit.collider.GetComponent<GroundProperties>();
-                //Debug.Log(currGround.groundPropertyData.GroundName);
-                //显示鼠标悬浮的提示框
-                currSelectedTip.transform.position = hit.collider.transform.position;
-                currSelectedTip.transform.localScale = hit.collider.transform.localScale;
+                //保存当前选中的土地 
+                currentGround = hitInfo.collider.gameObject.GetComponent<GroundProperties>();
+                //让提示框跟随到鼠标的位置 
+                //让提示框跟随到鼠标的位置 
+                selectGroundTip.transform.localPosition = hitInfo.collider.gameObject.transform.localPosition;
+                selectGroundTip.transform.localScale = hitInfo.collider.gameObject.transform.localScale;
             }
         }
 
-        //鼠标左键点击，弹出相应的UI
-        if (Input.GetMouseButtonDown(0) && currGround != null)
+        //鼠标左键点击 要显示当前点到的土地  
+        if (Input.GetMouseButtonDown(0) && currentGround != null)
         {
-            switch (currGround.groundPropertyData.State)
+            switch (currentGround.groundProperty.State)
             {
-                case 0://未购买 显示购买窗口
+                case 0:
+                    //显示购买的窗口  
                     UIManager.Instance.openPanel<BuyGroundPanel>();
                     break;
-
-                case 1://已购买 显示建造窗口
+                case 1:
+                    //已购买 显示建造的窗口   建造对应的工厂 农场 各种铺子     
                     UIManager.Instance.openPanel<BuildPanel>();
                     break;
-
-                case 2://已建造 显示建造物详情 如果是商店要区分普通建造物
-                    string type = currGround.transform.GetComponentInChildren<BuildItemBase>().buildType;
-                    if (type == "other")//显示商店详情页面
+                case 2:
+                    //已经建造  显示详情,拆除面板     
+                    //拿到建造物类型显示对应的详情面板  
+                    string type = currentGround.transform.Find("Building").GetComponent<BuildItemBase>().BuildType;
+                    if (type == "other")
                     {
-                        UIManager.Instance.closePanel<BuildItemDetailPanel>();
                         UIManager.Instance.closePanel<ShopDetailPanel>();
+                        UIManager.Instance.closePanel<BuildItemDetailPanel>();
                         UIManager.Instance.openPanel<ShopDetailPanel>();
                     }
                     else
@@ -150,17 +186,9 @@ public class BuildController : UnitySingleTon<BuildController>
                         UIManager.Instance.closePanel<BuildItemDetailPanel>();
                         UIManager.Instance.openPanel<BuildItemDetailPanel>();
                     }
+
                     break;
             }
         }
-    }
-    
-    /// <summary>
-    /// 提供给外部隐藏提示土地的方法
-    /// </summary>
-    public void DisAppareCurrSelectedTip()
-    {
-        currGround = null;
-        currSelectedTip.SetActive(false);
     }
 }

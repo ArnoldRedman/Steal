@@ -2,25 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/// <summary>
-/// 产出物品UI项
-/// </summary>
+
 public class ProductItem : MonoBehaviour
 {
-    public Image icon;//产出物品的图标
-    public Text name;//产出物品的名字
-    public Text num;//产出物品的数量
-
-    /// <summary>
-    /// 更新面板数据
-    /// </summary>
-    /// <param name="id">产出物品的id</param>
-    /// <param name="productNum">产出数量</param>
-    public void UpdateData(string id,int productNum)
+    public Image Icon;
+    public Text name;
+    public Text num;
+    void Start()
     {
-        icon.sprite = ResMgr.Instance.load<Sprite>("Sprite/"+GameManager.instance.productItemDict[id].sprite);
-        name.text = GameManager.instance.productItemDict[id].name;
-        num.text =productNum.ToString();
+        
     }
-
+/// <summary>
+/// 更新物品的信息 
+/// </summary>
+/// <param name="id"></param>
+/// <param name="count"></param>
+    public void UpdateData(string id,int count)
+    {
+        //拿到物品的信息 
+        ProductItemData productItemData = GameManager.Instance.productItemDict[id];
+        Icon.sprite = Resources.Load<Sprite>("Icon/" +productItemData.sprite);
+        name.text = productItemData.name;
+        num.text=count.ToString();  
+    }
+    void Update()
+    {
+        
+    }
 }

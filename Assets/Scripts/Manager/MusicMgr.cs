@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicMgr : UnitySingleTonMono<MusicMgr>
@@ -6,7 +8,7 @@ public class MusicMgr : UnitySingleTonMono<MusicMgr>
     private AudioSource bkMusic; //音频组件
     private float bkVolume = 1; //背景音乐大小
     private float soundVolume = 1; //音效大小
-
+    
     private List<AudioSource> soundlist = new List<AudioSource>();
 
     /// <summary>
@@ -33,8 +35,7 @@ public class MusicMgr : UnitySingleTonMono<MusicMgr>
     /// </summary>
     public void StopBKMusic()
     {
-        if (bkMusic == null)
-            return;
+        if (bkMusic == null) return;
         bkMusic.Stop();
     }
 
@@ -43,15 +44,13 @@ public class MusicMgr : UnitySingleTonMono<MusicMgr>
     /// </summary>
     public void PauseBKMusic()
     {
-        if (bkMusic == null)
-            return;
+        if (bkMusic == null) return;
         bkMusic.Pause();
     }
 
     public void changeBkVolume(float volume)
     {
-        if (bkMusic == null)
-            return;
+        if (bkMusic == null) return;
         bkMusic.volume = volume;
     }
 
@@ -65,7 +64,7 @@ public class MusicMgr : UnitySingleTonMono<MusicMgr>
         GameObject soundObj = PoolMgr.Instance.getObj("Music/Sound/" + soundName);
         //获取音频组件
         AudioSource source = soundObj.GetComponent<AudioSource>();
-        if (soundObj.GetComponent<AudioSource>() == null)
+        if (soundObj.GetComponent<AudioSource>() == null) 
             source = soundObj.AddComponent<AudioSource>();//如果音频组件为空则添加一个音频组件
         source.clip = ResMgr.Instance.load<AudioClip>("Music/Sound/" + soundName);//加载音频文件
         source.volume = soundVolume;//设置音效大小
@@ -99,8 +98,7 @@ public class MusicMgr : UnitySingleTonMono<MusicMgr>
 
     private void Update()
     {
-        if (soundlist.Count == 0)
-            return;
+        if (soundlist.Count == 0) return;
         for (int i = soundlist.Count - 1; i >= 0; i--)
         {
             string soundName = soundlist[i].name;

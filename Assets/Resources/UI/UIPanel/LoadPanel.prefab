@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 2769589596595221784}
   - component: {fileID: 2769589596595221787}
   - component: {fileID: 2769589596595221786}
-  - component: {fileID: 1381090407779842373}
+  - component: {fileID: 1778295129641886852}
   m_Layer: 5
   m_Name: LoadPanel
   m_TagString: Untagged
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1381090407779842373
+--- !u!114 &1778295129641886852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2769589596595221783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6515ec833e3a27448ceed2be6b37c9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e19f2acf1b90cf48b3c80756426f43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2769589596788906604

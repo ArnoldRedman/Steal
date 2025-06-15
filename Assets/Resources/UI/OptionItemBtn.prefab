@@ -29,14 +29,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2726458379210105584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 298.5, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 298.5, y: -20}
+  m_SizeDelta: {x: 577, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2726458379000238902
 CanvasRenderer:
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 2726458379210105587}
   - component: {fileID: 2726458379210105586}
   - component: {fileID: 2726458379210105585}
-  - component: {fileID: 4621307826920536061}
+  - component: {fileID: 6603755269458575225}
   m_Layer: 5
   m_Name: OptionItemBtn
   m_TagString: Untagged
@@ -126,6 +127,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2726458379000238899}
   m_Father: {fileID: 0}
@@ -258,7 +260,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &4621307826920536061
+--- !u!114 &6603755269458575225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2726458379210105551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0001820453ae542b1cdd628a8c29c5, type: 3}
+  m_Script: {fileID: 11500000, guid: e0819627165e19243be6c866cecb490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 

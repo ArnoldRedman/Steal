@@ -1,4 +1,6 @@
-﻿//using Unity.VisualScripting;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 /// <summary>
 /// 资源加载管理器  
@@ -11,9 +13,9 @@ public class ResMgr : SingleTon<ResMgr>
     /// <param name="name"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public T load<T>(string pathName, Transform father = null) where T : Object  //资源加载类型 游戏对象 非游戏对象 
+    public T load<T>(string name,Transform father=null)where T:Object
     {
-        T res = Resources.Load<T>(pathName);
+        T res = Resources.Load<T>(name);
         if (res is GameObject) //GameObject 
         {
             T obj = GameObject.Instantiate(res);
@@ -22,13 +24,13 @@ public class ResMgr : SingleTon<ResMgr>
                 (obj as GameObject).transform.SetParent(father.transform);
                 (obj as GameObject).transform.localPosition = Vector3.zero;
                 (obj as GameObject).transform.localRotation = Quaternion.identity;
-                obj.name = pathName;
+                obj.name = name;
             }
             return obj;
         }
-        else//AudioClip TextAsset 非游戏对象类型  
+        else//AudioClip TextAsset  
         {
-            return res;
+            return res; 
         }
     }
 }

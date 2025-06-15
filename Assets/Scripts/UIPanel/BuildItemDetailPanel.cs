@@ -1,282 +1,266 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BuildItemDetailPanel : BasePanel
 {
-    public Text title;
+    public GameObject ProductContent;//产出物品的容器 
+    public GameObject productItemPanel;
+    public Text Title;
     public Text productName;
     public Image productIcon;
-    public Button changeProductBtn;//切换产出物品的按钮
-    public Text productDescription;//物品产出描述
-    public Text productTimeDescription;//收获的时间描述
-    public Text chengben;//成本
-    public Button removeBtn;//拆除按钮
-    public GameObject xiaohao;//消耗
-    public BuildItemBase currBuildItem;//当前点到的建造物
-    public string currBuildId;
-    public string currProductId;
-    private bool isOpen = false;//当前详情是否打开
-    [Header("是否成年")]
-    public Text isAdultDes;
-    [Header("耗材是否充足")] 
-    public Text materialDes;
-    [Header("金币是否充足")]
-    public Text moneyDes;
-    [Header("产出物品的面板")] 
-    public GameObject productItemPanel;
-    public GameObject productContent;
+    [Header("更换的按钮")]
+    public Button changeProductBtn;
+    public Text productDescription;
+    public Text productTimeDescription;
+    public Text changben;
+    public Button chaichuBtn;
+    public GameObject xiaohao;
+    public GameObject state;
+    public Text canProductText;
+    public Text isAdultText;
+    public Text moneyStateText;
+    public BuildItemBase currentBuildItem; //当前点到的建造物  
+    private bool isOpen = false;
 
     private void OnEnable()
     {
-        //移除建造物
-        removeBtn.onClick.AddListener(() =>
-        {
-            BuildController.Instance.RemoveBuilding(currBuildItem.buildid,currBuildItem);
-        });
-        EventCenter.Instance.AddEventListener(GameEvent.拆除建造物,chaichu);
         StartCoroutine(DelayedLayoutUpdate());
-        Init();//初始化详情面板
-        UpdateEveryData();
+        Init();
+        UpdateData();//更新收获时间的信息 
     }
-
-    /// <summary>
-    /// 拆除建造物之后关闭详情面板
-    /// </summary>
-    private void chaichu()
-    {
-        UIManager.Instance.closePanel<BuildItemDetailPanel>();
-    }
-    
-    private void OnDisable()
-    {
-        EventCenter.Instance.RemoveEventListener(GameEvent.拆除建造物,chaichu);
-        StopCoroutine(DelayedLayoutUpdate());
-        isOpen = false;
-    }
-
-    /// <summary>
-    /// 更新每天要刷新的信息
-    /// </summary>
-    private void UpdateEveryData()
-    {
-        if (!isOpen)
-        {
-            return;
-        }
-        productTimeDescription.text = $"距收获还有{currBuildItem.shouhuoTime}天";
-        UpdateState();
-    }
-
-    /// <summary>
-    /// 更新每日状态信息
-    /// </summary>
-    private void UpdateState()
-    {
-        //金币状态
-        if (currBuildItem.isMoneyEnough)
-        {
-            moneyDes.text = "金币充足";
-            moneyDes.color = Color.black;
-        }
-        else
-        {
-            moneyDes.text = "金币不足";
-            moneyDes.color = Color.red;
-        }
-        //根据建造物类型显示对应的信息
-        materialDes.transform.parent.gameObject.SetActive(true);
-        isAdultDes.transform.parent.gameObject.SetActive(true);
-        switch (currBuildItem.buildType)
-        {
-            case "pasture":
-                UpdateHaocaiDetail();
-                isAdultDes.text = currBuildItem.isAdult ? "已成年" : "未成年";
-                break;
-
-            case "factory":
-                UpdateHaocaiDetail();
-                isAdultDes.transform.parent.gameObject.SetActive(false);
-                break;
-            default:
-                //默认普通农场不显示这些
-                materialDes.transform.parent.gameObject.SetActive(false);
-                isAdultDes.transform.parent.gameObject.SetActive(false);
-                break;
-        }
-    }
-
-    /// <summary>
-    /// 更新耗材状态信息
-    /// </summary>
-    private void UpdateHaocaiDetail()
-    {
-        materialDes.color = Color.black;
-        //不需要耗材的农场
-        if (currBuildItem.allXiaohaoDict == null)
-        {
-            materialDes.text = "无需耗材";
-            return;
-        }
-
-        if (currBuildItem.isMoneyEnough)
-        {
-            materialDes.text = "材料充足";
-        }
-        else
-        {
-            materialDes.text = "材料不足";
-            materialDes.color = Color.red;
-        }
-    }
-
-    /// <summary>
-    /// 每次打开详情面板时初始化
-    /// </summary>
-    private void Init()
+    private void Init()//初始化详情面板 就是每次打开详情面板的时候要初始化 
     {
         productItemPanel.gameObject.SetActive(false);
-        isOpen = true;//说明当前面板处于打开状态
-        //当前建造物
-        currBuildItem = BuildController.Instance.currGround.transform.Find("Building").GetComponent<BuildItemBase>();
-        //拿到当前的建造信息
-        BuildItemData buildItemDate = GameManager.instance.buildItemDict[currBuildItem.buildid];
+        isOpen = true;
+        //当前的建造物  
+        currentBuildItem = BuildController.Instance.currentGround.transform.Find("Building")
+            .GetComponent<BuildItemBase>();
         //更换按钮逻辑
-        ChangeBtnInit();
-        //建造物的标题
-        title.text = buildItemDate.name;
-        currBuildId = currBuildItem.buildid;
-        currProductId = currBuildItem.productItemId;
-        //产品信息更新
-        UpdateData();//更换按钮之后要更新的相关内容
+        changeBtnInit();
+        //拿到当前的建造信息 
+        BuildItemData buildItemData = GameManager.Instance.buildItemDict[currentBuildItem.buildId];
+        //产出物品的字典
+        Dictionary<string, ProductItemData> productDict = GameManager.Instance.productItemDict;
+        //拿到产出物品
+        ProductItemData currentProdcut = productDict[currentBuildItem.currentProductItemId];
+        //产品信息更新    
+        UpdateProductData(currentProdcut);
+        //产出效率信息更新  
+        UpdateProductEfficient(buildItemData,currentProdcut);         
+        Title.text = buildItemData.name;
+       
+     
+        productTimeDescription.text = $"距离收获还有{currentBuildItem.shouhuoTime}天";
+        changben.text = buildItemData.keepCost.ToString();
+        //初始化消耗物品的信息  
+        updateXiaohaoItem(currentBuildItem.buildId,currentBuildItem.currentProductItemId);
+        //更新状态栏内容
+        UpdateState();
+    }
+/// <summary>
+/// 更新产出效率的信息
+/// </summary>
+    private void UpdateProductEfficient(BuildItemData buildItemData,ProductItemData currentProdcut)
+    {
+        productDescription.text =
+            $"每{currentBuildItem.ripeningTime}天产出{buildItemData.product[currentBuildItem.currentProductItemId]}{currentProdcut.unit}{currentProdcut.name}";
+    }
+/// <summary>
+/// 更新产出物品的信息 
+/// </summary>
+    private void UpdateProductData(ProductItemData currentProdcut)
+    {
+        productName.text = currentProdcut.name;
+        productIcon.sprite = ResMgr.Instance.load<Sprite>("Icon/" + currentProdcut.sprite);
     }
 
     /// <summary>
-    /// 初始化更换按钮的逻辑
-    /// </summary>
-    private void ChangeBtnInit()
+/// 更换按钮初始化  
+/// </summary>
+    private void changeBtnInit()
     {
-        if (currBuildItem.productDict.Count > 1)
+        if (currentBuildItem.produtctDict.Count>1)
         {
-            changeProductBtn.gameObject.SetActive(true);
-            changeProductBtn.onClick.AddListener(OpenProductItemPanel);
+            changeProductBtn.gameObject.SetActive(true);     
+            changeProductBtn.onClick.AddListener(openProductItemPanel);
         }
         else
         {
             changeProductBtn.gameObject.SetActive(false);
         }
     }
-
-    /// <summary>
-    /// 打开能切换生成产品的面板
-    /// </summary>
-    private void OpenProductItemPanel()
+/// <summary>
+/// 打开产出物品的列表选项面板
+/// </summary>
+    private void openProductItemPanel()
     {
-        //产出物品的字典
-        var productDict = currBuildItem.productDict;
-
-        productItemPanel.gameObject.SetActive(true);//显示面板
-        //先清除原来的物品项
-        for (int i = 0; i < productContent.transform.childCount; i++)
+        Dictionary<string, int> productDict = currentBuildItem.produtctDict;
+        if (productDict == null) return;
+        productItemPanel.gameObject.SetActive(true);
+        //更新内容  
+        //先清除原来的物品项  
+        for (int i = 0; i < ProductContent.transform.childCount; i++)
         {
-            //操作productContent的子对象
-            Destroy(productContent.transform.GetChild(i).gameObject);
+            Destroy(ProductContent.transform.GetChild(i).gameObject);
         }
-        //克隆新的物品项目放到容器中
-        foreach (var id in productDict.Keys)
+        //克隆新的物品项 放到productcontent中 
+        foreach (string id in productDict.Keys)
         {
-            GameObject obj = ResMgr.Instance.load<GameObject>("UI/ProductItemDetail",productContent.transform);
-            obj.GetComponent<ProductItemDetail>().UpdateData(GameManager.instance.productItemDict[id], productDict[id],currBuildItem);
+            GameObject obj=ResMgr.Instance.load<GameObject>("UI/ProductItemDetail",ProductContent.transform);    
+            obj.GetComponent<ProductItemDetail>().UpdateData(GameManager.Instance.productItemDict[id],productDict[id],currentBuildItem);
         }
     }
 
 
     /// <summary>
-    /// 更新消耗物品
+    /// 更新消耗物品的信息
     /// </summary>
-    private void UpdateXiaohaoItem(string buildId,string productId)
+    /// <param name="buildId"></param>
+    /// <param name="currentProductItemId"></param>
+    private void updateXiaohaoItem(string buildId, string currentProductItemId)
     {
-        //if (currProductId == productId && currBuildId == buildId)
-        //{
-        //    return;//点的两个是同一类型的建筑物，不需要更新
-        //}
-
-        //先清除原来的物品信息
+        //先清除原来的消耗的物品信息 
         for (int i = 0; i < xiaohao.transform.childCount; i++)
         {
             Destroy(xiaohao.transform.GetChild(i).gameObject);
         }
-        //显示消耗物品
-        //拿到消耗物品的字典
-        Dictionary<string, int> xiaohaoDict = GameManager.instance.GetXiaohaoItemDict(buildId, productId);
-        if (xiaohaoDict!=null)
+
+        //显示消耗物品  
+        //拿到消耗物品的字典 
+        Dictionary<string, int> xiaohaoDict = GameManager.Instance.getxiaohaoItemDict(buildId, currentProductItemId);
+        if (xiaohaoDict != null)
         {
             foreach (var id in xiaohaoDict.Keys)
             {
-                //克隆消耗物品到xiaohao下面
-                GameObject xiaohaoItem = ResMgr.Instance.load<GameObject>("UI/XiaoHaoItem",xiaohao.transform);
-                xiaohaoItem.GetComponent<XiaoHaoItem>().UpdateData(GameManager.instance.productItemDict[id], xiaohaoDict[id]);
+                //克隆消耗物品到xiaohao 下面 
+                GameObject xiaohaoItem = ResMgr.Instance.load<GameObject>("UI/XiaoHaoItem", xiaohao.transform);
+                xiaohaoItem.GetComponent<XiaoHaoItem>()
+                    .updateData(GameManager.Instance.productItemDict[id], xiaohaoDict[id]);
             }
         }
     }
 
-    private void Start()
-    {
-        EventCenter.Instance.AddEventListener(GameEvent.日期时间每日更新事件,UpdateEveryData);
-        EventCenter.Instance.AddEventListener(GameEvent.产出物品id变化,UpdateData);
-    }
-
-    private void OnDestroy()
-    {
-        EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件, UpdateEveryData);
-        EventCenter.Instance.RemoveEventListener(GameEvent.产出物品id变化, UpdateData);
-    }
-
     /// <summary>
-    /// 更换按钮之后要更新的相关内容
+    /// 更新状态栏内容    农场 显示金币是否足够的状态  牧场 显示三个信息 1.耗材 2.金币 3.是否成年   工厂 显示两个信息 1.耗材  2.金币   
     /// </summary>
+    private void UpdateState()
+    {
+        state.SetActive(true);
+        //金币的状态 
+        if (currentBuildItem.IsMoneyEnough)
+        {
+            moneyStateText.text = "金币充足";
+            moneyStateText.color = Color.black;
+        }
+        else
+        {
+            moneyStateText.text = "金币不足！！！";
+            moneyStateText.color = Color.red;
+        }
+
+        isAdultText.gameObject.SetActive(true);
+        canProductText.gameObject.SetActive(true); 
+        switch (currentBuildItem.BuildType)
+        {
+           case "pasture":
+               UpdateHaocaiDetail();
+               isAdultText.text = currentBuildItem.isAdult ? "已成年" : "未成年";
+               break;
+           case "factory":
+               UpdateHaocaiDetail();
+               isAdultText.gameObject.SetActive(false);
+               break;
+           default:
+               isAdultText.gameObject.SetActive(false);
+               canProductText.gameObject.SetActive(false);  
+               break;
+        }
+    }
+    /// <summary>
+    /// 更新耗材信息的方法 
+    /// </summary>
+    public void UpdateHaocaiDetail()
+    {
+        canProductText.color = Color.black;
+        if (currentBuildItem.allXiaohaoDict==null)
+        {
+            canProductText.text = "无需耗材";
+            return;
+        }
+
+        if (currentBuildItem.IsMaterialEnough)
+        {
+            canProductText.text = "材料充足";
+        }
+        else
+        {
+            canProductText.text = "耗材不足";
+            canProductText.color = Color.red;
+        }
+    }
+    private void OnDisable()
+    {
+        StopCoroutine(DelayedLayoutUpdate());
+        isOpen = false;
+        changeProductBtn.onClick.RemoveAllListeners();
+    }
+
+    void Start()
+    {
+        chaichuBtn.onClick.AddListener(()=>{BuildController.Instance.removeBuilding(currentBuildItem.buildId,currentBuildItem);});
+        EventCenter.Instance.AddEventListener(GameEvent.拆除建造物,chaichu);
+        EventCenter.Instance.AddEventListener(GameEvent.日期每日更新变化, UpdateDayData);
+        EventCenter.Instance.AddEventListener(GameEvent.产出物品id变化,UpdateData);
+        
+    }
+/// <summary>
+/// 拆除建造物  
+/// </summary>
+    private void chaichu()
+    {
+        UIManager.Instance.closePanel<BuildItemDetailPanel>();
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();   
+        chaichuBtn.onClick.RemoveAllListeners();    
+        EventCenter.Instance.RemoveEventListener(GameEvent.日期每日更新变化, UpdateDayData);
+        EventCenter.Instance.RemoveEventListener(GameEvent.产出物品id变化,UpdateData);
+    }
+    // Update is called once per frame
+
+/// <summary>
+/// 每天更新的方法 
+/// </summary>
+    private void UpdateDayData()
+    {
+        if (!isOpen) return;//只有面板打开的时候才需要去刷新信息 
+        productTimeDescription.text = $"距离收获还有{currentBuildItem.shouhuoTime}天";
+        UpdateState();
+    }
+/// <summary>
+/// 产品更换后要更新的方法  
+/// </summary>
     private void UpdateData()
     {
-        //关闭产出物品项的列表
         productItemPanel.gameObject.SetActive(false);
-        //拿到当前的建造信息
-        BuildItemData buildItemDate = GameManager.instance.buildItemDict[currBuildItem.buildid];
+        //拿到当前的建造信息 
+        BuildItemData buildItemData = GameManager.Instance.buildItemDict[currentBuildItem.buildId];
         //产出物品的字典
-        Dictionary<string, ProductItemData> productDict = GameManager.instance.productItemDict;
+        Dictionary<string, ProductItemData> productDict = GameManager.Instance.productItemDict;
         //拿到产出物品
-        ProductItemData currProduct = productDict[currBuildItem.productItemId];
-        //产品信息更新
-        UpdateProductData(currProduct);
-        //产能信息更新
-        UpdateProductEfficient(buildItemDate, currProduct);
-        //每日要更新的信息
-        UpdateEveryData();
-        //耗材信息更新 建造id 产出物品id
-        UpdateXiaohaoItem(currBuildItem.buildid,currProduct.id);
-    }
-
-    /// <summary>
-    /// 更新产品信息
-    /// </summary>
-    /// <param name="currProduct"></param>
-    private void UpdateProductData(ProductItemData currProduct)
-    {
-        //当前产出物品的名字
-        productName.text = currProduct.name;
-        //当前产出物品的图片
-        productIcon.sprite = ResMgr.Instance.load<Sprite>("Sprite/" + currProduct.sprite);
-    }
-
-    /// <summary>
-    /// 更新产能信息
-    /// </summary>
-    /// <param name="buildItemDate"></param>
-    /// <param name="currProduct"></param>
-    private void UpdateProductEfficient(BuildItemData buildItemDate, ProductItemData currProduct)
-    {
-        //每多少天，产出多少单位的什么东西
-        productDescription.text = $"每{buildItemDate.ripeningTime}天，产出{buildItemDate.product[currProduct.id]}{currProduct.unit}{currProduct.name}";  
+        ProductItemData currentProdcut = productDict[currentBuildItem.currentProductItemId];
+        //产品信息更新 
+        UpdateProductData(currentProdcut);
+        //产出效率更新 
+        UpdateProductEfficient(buildItemData,currentProdcut);
+        //消耗物品更新 
+        updateXiaohaoItem(currentBuildItem.buildId,currentBuildItem.currentProductItemId);
+        
     }
 }

@@ -1,26 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TipPanel : BasePanel
+public class TipPanel : BasePanel  //激活
 {
-    public Text tipText;
-
-    public void UpdateTipText(string tip)
+    public Text TipText;
+    void Start()
     {
-        tipText.text = tip;
+        
     }
-
-    private void OnEnable()
+/// <summary>
+/// 更新提示框内容 
+/// </summary>
+    public void UpdateTipText(string text)
     {
-        Invoke(nameof(CloseTipPanel),0.8f);
+        TipText.text = text;    
     }
-
-
-    private void CloseTipPanel()
+    // Update is called once per frame
+    void Update()
     {
-        UIManager.Instance.closePanel<TipPanel>();
+        
     }
 }

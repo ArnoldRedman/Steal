@@ -3,43 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 建造物品的详细面板
-/// </summary>
 public class BuildItemsPanel : BasePanel
 {
-    public GameObject content;//容器
+    //容器
+    public GameObject content;
 
     public override void Hide()
     {
-        gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
-    private void Start()
+    void Start()
     {
-        //建造物品成功后要隐藏掉
-        EventCenter.Instance.AddEventListener(GameEvent.建造物品成功,Hide);
-        UpdateData();
-        //初始化 默认什么面板都不显示
+        EventCenter.Instance.AddEventListener(GameEvent.建造物品成功, Hide);
+        updateData();
         Hide();
     }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.建造物品成功,Hide);
+        EventCenter.Instance.RemoveEventListener(GameEvent.建造物品成功, Hide);
     }
 
-    private void UpdateData()
+    public void updateData()
     {
-        string type = name;//拿到当前面板要显示建造的类型
-        foreach (var itemData in GameManager.instance.buildItemDict.Values)
+        string type = this.name; //名字和类型一样 
+        foreach (BuildItemData item in GameManager.Instance.buildItemDict.Values)
         {
-            if (itemData.type == type)
+            if (item.type == type)
             {
+                //克隆我们的builditem预制体到我们的content下面 
                 GameObject newItem = ResMgr.Instance.load<GameObject>("UI/BuildItem", content.transform);
-                //刷新BuildItem面板中的数据
-                newItem.GetComponent<BuildItem>().UpdateData(itemData);
+                newItem.GetComponent<BuildItem>().UpdateData(item);
             }
         }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 }

@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 /// <summary>
-/// 材料工厂
+/// 合成工坊基类 
 /// </summary>
 public class MaterialFactory : Factory
 {
-    
+
 }

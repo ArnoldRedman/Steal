@@ -2,16 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// 背包面板UI 
-/// </summary>
+
 public class KnapsackPanel : BasePanel
 {
-    //当前背包显示的所有物品
-    private Dictionary<string, ProductItem> currentShowProductItems = new Dictionary<string, ProductItem>();
+    public Dictionary<string, ProductItem> currentShowProductDict = new Dictionary<string, ProductItem>();
+    public GameObject content; //放背包数据项
 
-    public GameObject content;//放置物品项的容器
-    //每次打开面板的时候从背包数据中获取当前最新的信息
     private void OnEnable()
     {
         UpdateData();
@@ -19,43 +15,54 @@ public class KnapsackPanel : BasePanel
 
     void Start()
     {
-        EventCenter.Instance.AddEventListener(GameEvent.背包数据变化, UpdateData);
+        EventCenter.Instance.AddEventListener(GameEvent.背包数据变化,UpdateData);
     }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.背包数据变化, UpdateData);
+        EventCenter.Instance.RemoveEventListener(GameEvent.背包数据变化,UpdateData);
     }
 
-    //更新背包面板数据
+    /// <summary>
+    /// 背包信息更新的方法  背包中的物品数量为0就不显示 大于0显示 
+    /// </summary>
     public void UpdateData()
     {
-        Dictionary<string, int> productDict = GameManager.instance.knapsack.productDict;//创建一个字典 背包的数据
+        //背包中所有物品的数量信息
+        Dictionary<string, int> productDict = GameManager.Instance.currentKnapsack.productDict;
+        //遍历背包中的数据
         foreach (var id in productDict.Keys)
         {
-            if (productDict[id] > 0)//数量大于0就显示产出物品
+            if (productDict[id] > 0) //显示
             {
-                if (currentShowProductItems.ContainsKey(id))//如果当前数据不为0 下次就增加数据
+                if (currentShowProductDict.ContainsKey(id))
                 {
-                    //更新UI数据 把最新的物品的产出的数量传过去
-                    currentShowProductItems[id].UpdateData(id, productDict[id]);
+                    currentShowProductDict[id].UpdateData(id, productDict[id]);
                 }
-                else//当前数据为0 背包里没有这个东西 克隆一个新的放到content下面   
+                else //第一次显示  那就克隆一个新到content下面 
                 {
-                    GameObject newProductItem = ResMgr.Instance.load<GameObject>("UI/ProductItem", content.transform);
-                    ProductItem productItem = newProductItem.GetComponent<ProductItem>();//拿到ProductItem脚本
+                    GameObject newobj = ResMgr.Instance.load<GameObject>("UI/ProductItem",content.transform);
+                    ProductItem productItem = newobj.GetComponent<ProductItem>();
                     productItem.UpdateData(id, productDict[id]);
-                    currentShowProductItems.Add(id, productItem);//添加到已显示的面板字典中
+                  
+                    //添加到字典中 
+                    currentShowProductDict.Add(id, productItem);
                 }
             }
-            else//为0则不显示产出物品 销毁   
+            else //不显示 
             {
-                if (currentShowProductItems.ContainsKey(id))
+                //销毁掉 
+                if (currentShowProductDict.ContainsKey(id))
                 {
-                    DestroyImmediate(currentShowProductItems[id].gameObject);
-                    currentShowProductItems.Remove(id);
+                    ProductItem obj = currentShowProductDict[id];//先存起来
+                    currentShowProductDict.Remove(id);//从字典中移除 
+                    Destroy(obj.gameObject);//销毁 
                 }
             }
         }
+    }
+
+    void Update()
+    {
     }
 }

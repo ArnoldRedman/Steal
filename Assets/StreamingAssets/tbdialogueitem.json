@@ -36,7 +36,7 @@
     "id": "4",
     "targetName": "小明",
     "targetIcon": "15",
-    "dialogueContent": "金币达到1000000可以领取免费的玉石",
+    "dialogueContent": "金币达到一百万可以领取玉石",
     "nextId": "0",
     "optionList": [],
     "taskId": "16"

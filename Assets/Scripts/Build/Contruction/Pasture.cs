@@ -2,18 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//继承牧场基类
+/// <summary>
+/// 牧场基类 
+/// </summary>
 public class Pasture : BuildItemBase
 {
-    private void Start()
+    public virtual void Awake()
     {
         Init();
-        EventCenter.Instance.AddEventListener(GameEvent.日期时间每日更新事件,TurnDay);
+        EventCenter.Instance.AddEventListener(GameEvent.日期每日更新变化,TurnDay);
     }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件, TurnDay);
+        EventCenter.Instance.RemoveEventListener(GameEvent.日期每日更新变化,TurnDay);
+        
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6487605372136770146}
   - component: {fileID: 6487605372136770147}
   - component: {fileID: 6487605372136770173}
+  - component: {fileID: 8678945043327181858}
   m_Layer: 5
   m_Name: ArchiveFileItem
   m_TagString: Untagged
@@ -29,6 +30,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6487605373509148615}
   - {fileID: 6487605373937189504}
@@ -122,6 +124,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8678945043327181858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487605372136770145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c1752f244f451429d40dfb3fa8f45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  archiveName: {fileID: 6487605373509148614}
+  dateText: {fileID: 6487605373937189507}
 --- !u!1 &6487605373509148612
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +166,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6487605372136770144}
   m_RootOrder: 0
@@ -229,6 +246,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6487605372136770144}
   m_RootOrder: 1

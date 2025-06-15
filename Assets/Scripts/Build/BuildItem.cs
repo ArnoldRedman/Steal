@@ -1,61 +1,64 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 每一项建造物品的面板
-/// </summary>
 public class BuildItem : MonoBehaviour
 {
     public Image sprite;
-    public Text nameText;
+    public Text name;
     public Text price;
-    public BuildItemData CurrData;
+    public BuildItemData currentData;
     private Button buildBtn;
-
-    private void Start()
+    void Start()
     {
         buildBtn = gameObject.GetComponent<Button>();
-        if (buildBtn!=null)
+        if (buildBtn != null)
         {
-            buildBtn.onClick.AddListener(BuyCheck);
+            buildBtn.onClick.AddListener(() =>
+            {
+                buyCheck();
+               
+            });
         }
     }
 
-    /// <summary>
-    /// 购买建造物的逻辑
-    /// </summary>
-    private void BuyCheck()
+    private void buyCheck()
     {
-        //判断玩家金币是否足够购买
-        if (GameManager.instance.CurrPlayerData.Coin>=CurrData.price)
+        if (GameManager.Instance.playerData.Coin >= currentData.price)
         {
-            GameManager.instance.CurrPlayerData.Coin-=CurrData.price;
-            //克隆物品到土地上
-            GameObject obj = ResMgr.Instance.load<GameObject>($"Ground/{CurrData.prefab}",BuildController.Instance.currGround.transform);
-            obj.name = "Building";//统一命名为Building，可以通过这个名字拿到相应组件
+            GameObject obj = ResMgr.Instance.load<GameObject>($"Ground/{currentData.prefab}",BuildController.Instance.currentGround.transform);
+            obj.name = "Building";
             obj.transform.localScale = Vector3.one;
-            //添加到建造字典中
-            BuildController.Instance.AddBuilding(CurrData.id,obj.GetComponent<BuildItemBase>());
-            EventCenter.Instance.EventTrigger(GameEvent.建造物品成功);//建造物品成功
-            //更改土地状态为2
-            BuildController.Instance.currGround.groundPropertyData.State = 2;
-            EventCenter.Instance.EventTrigger<float>(GameEvent.土地状态变化,2);
+            obj.transform.localPosition=Vector3.zero;
+            BuildItemBase buildItem=obj.GetComponent<BuildItemBase>();
+            buildItem.groundName = BuildController.Instance.currentGround.name;
+            //添加新建造物到建造字典中  
+            BuildController.Instance.addBuilding(currentData.id,buildItem);
+            EventCenter.Instance.EventTrigger(GameEvent.建造物品成功);
+            GameManager.Instance.playerData.Coin-=currentData.price;
+            BuildController.Instance.currentGround.groundProperty.State=2;
+            BuildController.Instance.currentGround.groundProperty.buildId=currentData.id;   
+            EventCenter.Instance.EventTrigger(GameEvent.土地状态变化,2);
         }
         else
         {
-            UIManager.Instance.openPanel<TipPanel>().UpdateTipText("金币不足");
+            UIManager.Instance.openPanel<TipPanel>().UpdateTipText("金币不够");
         }
+      
     }
-
 
     public void UpdateData(BuildItemData data)
     {
-        CurrData = data;
-        nameText.text = data.name;
+        currentData = data;
+        name.text = data.name;
         price.text = data.price.ToString();
-        sprite.sprite = ResMgr.Instance.load<Sprite>($"Sprite/{data.sprite}");
+        sprite.sprite = ResMgr.Instance.load<Sprite>($"Icon/{data.sprite}");
+        
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

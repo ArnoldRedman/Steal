@@ -1,19 +1,40 @@
-﻿public enum GameEvent
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+/// <summary>
+/// 游戏事件 
+/// </summary>
+public enum GameEvent
 {
-    游戏失败,
     进度条加载,
-    土地状态变化,
     建造物品成功,
-    日期时间每日更新事件,
-    金币发生改变,
+    土地状态变化,
+    日期每日更新变化,
+    金币变化,
     背包数据变化,
     产出物品id变化,
-    玩家等级发生变化,
-    切换到下一条对话语句,
+    玩家等级变化,
+    切换下一条对话语句,
+    任务UI切换,
     任务开始事件,
     任务结束事件,
     任务完成事件,
-    任务UI切换,
     建造物数量变化,
-    拆除建造物,
+    拆除建造物
+}
+/// <summary>
+/// UI动画切换类型 
+/// </summary>
+public enum UIAnimaEvent
+{
+    渐变,
+    默认
+}
+/// <summary>
+/// 存档类型 
+/// </summary>
+public enum ArchiveType
+{
+    上一次游戏=1,
+    新游戏存档=2
 }

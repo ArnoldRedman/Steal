@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 工厂基类 
+/// </summary>
 public class Factory : BuildItemBase
 {
-    private void Start()
+    public virtual void Awake()
     {
         Init();
-        EventCenter.Instance.AddEventListener(GameEvent.日期时间每日更新事件,TurnDay);
+        EventCenter.Instance.AddEventListener(GameEvent.日期每日更新变化,TurnDay);
     }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件, TurnDay);
+        EventCenter.Instance.RemoveEventListener(GameEvent.日期每日更新变化,TurnDay);
+        
     }
 }

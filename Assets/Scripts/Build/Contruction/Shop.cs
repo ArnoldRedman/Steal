@@ -1,17 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 商店建造物  比较特殊的  初始化的内容和别人不一样  每天要更新也和别人不一样  所以要对这两个方法进行重写  
+/// </summary>
 public class Shop : BuildItemBase
 {
     //价格比例  
     [HideInInspector]
     public float priceRate;
-    //商店最大的等级 
     [HideInInspector]
     public int maxLevel;
-    //当前商店的等级 
+    //商店的等级 
     [HideInInspector]
     public int level;
     //升级的价格 
@@ -28,49 +28,46 @@ public class Shop : BuildItemBase
     public float earnings;
     //商品的字典  
     public Dictionary<string, int> merchantingDict;
-
-    public virtual void Start()
+    //商店的名字 
+    [HideInInspector]
+    public string name;
+    public virtual void Awake()
     {
         Init();
-        EventCenter.Instance.AddEventListener(GameEvent.日期时间每日更新事件,TurnDay);
+        EventCenter.Instance.AddEventListener(GameEvent.日期每日更新变化,TurnDay);
     }
 
     private void OnDestroy()
     {
-        EventCenter.Instance.RemoveEventListener(GameEvent.日期时间每日更新事件,TurnDay);
+        EventCenter.Instance.RemoveEventListener(GameEvent.日期每日更新变化,TurnDay);
+        
     }
 
-    /// <summary>
-    /// 因为部分信息不用初始化 所以要重写
-    /// </summary>
     public override void Init()
     {
-        //拿到当前建造物的信息
-        BuildItemData buildItemData = GameManager.instance.buildItemDict[buildid];
+        BuildItemData buildItemData = GameManager.Instance.buildItemDict[buildId];
         level = 1;
         priceRate = 1;
         upgradePrice = 10000;
-        maxLevel = 5;
-        weihuPrice = buildItemData.keepCost;
+        maxLevel = 3;
+        weihuPrice=buildItemData.keepCost;
         chanchuCoin = 900;
-        earnings = (chanchuCoin - weihuPrice) * priceRate;
-        Incom += earnings;
-        buildType = buildItemData.type;
-        name = buildItemData.name;
-        isMoneyEnough = IsMoneyEnough();
-        canProduct = isMoneyEnough;
+        earnings=(chanchuCoin-weihuPrice)*priceRate;
+        Incom += earnings;//总收入  
+        BuildType = buildItemData.type;
+        name=buildItemData.name;
+        IsMoneyEnough = isMoneyEnough();
+        canProduct=IsMoneyEnough?true:false;    
     }
 
     public override void TurnDay()
     {
-        isMoneyEnough = IsMoneyEnough();
-        canProduct = isMoneyEnough;//更新商店运作状态
-        if (!canProduct)
-        {
-            return;
-        }
-        earnings = (chanchuCoin - weihuPrice) * priceRate;//更新每日收益
-        Incom += earnings;//更新总收入
-        GameManager.instance.CurrPlayerData.Coin += earnings;//更新玩家金币值
+        IsMoneyEnough = isMoneyEnough();
+        canProduct = IsMoneyEnough?true:false;
+        if (!canProduct) return;
+        earnings=(chanchuCoin-weihuPrice)*priceRate;
+        Incom += earnings;//总收入  
+        GameManager.Instance.playerData.Coin += earnings;
+        
     }
 }

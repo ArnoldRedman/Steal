@@ -1,16 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundProperties : MonoBehaviour
 {
-    public GroundPropertyData groundPropertyData = new GroundPropertyData();
-
-    [HideInInspector] public GameObject InitPrefab;
-    [HideInInspector] public GameObject HasBuyObj;
-
-    private void Start()
+    public GroundPropertyData groundProperty=new GroundPropertyData();
+    
+    
+    void Start()
     {
-        groundPropertyData.GroundName = this.name;
-        //groundPropertyData.Price = 200;
-        InitPrefab = transform.Find("InitPrefab").gameObject;
+        groundProperty.GroundName=this.gameObject.name;     
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

@@ -6,148 +6,129 @@ using UnityEngine.UI;
 
 public class BuyItemCheckPanel : BasePanel
 {
-    [Header("商品的名字")]
     public Text name;
-    [Header("购买数量的输入框")]
     public InputField countInput;
-    [Header("减少按钮")]
-    public Button reduceBtn;
-    [Header("增加按钮")]
-    public Button addBtn;
-    [Header("消耗的金币值")]
+    public Button jianBtn;
+    public Button jiaBtn;
     public Text moneyText;
-    [Header("确认购买按钮")]
     public Button checkBtn;
-    //最大的数量
     private int maxCount;
-    //当前数量
-    private int currCount;
-    //当前商品的信息
-    public MerchantingData currMerchantingData;
-    //商品的详细信息
-    public ProductItemData productItemData;
-    //金币是否足够
+    private int currentCount;
+    public MerchantingData currentMerchantingData;//当前商品的信息 
+    public ProductItemData productItemData;//商品的详细信息
     private bool isMoneyEnough;
-    //当金币不够的时候，金币的颜色显示红色，同时购买按钮不显示
-    private bool isShowButBtn;
-
+    private bool isShowBuyBtn;
     private void OnEnable()
     {
-        countInput.text = 0.ToString();
-        countInput.onValueChanged.AddListener(CountChange);
-        reduceBtn.onClick.AddListener(Reduce);
-        addBtn.onClick.AddListener(Add);
-        checkBtn.onClick.AddListener(BuyCheck);
+        countInput.onValueChanged.AddListener(countChange);
+        jianBtn.onClick.AddListener(jian);
+        jiaBtn.onClick.AddListener(jia);
+        checkBtn.onClick.AddListener(buyCheck);
+        
     }
-
-    public void UpdateData(MerchantingData data)
+/// <summary>
+/// 购买核对  
+/// </summary>
+    private void buyCheck()
     {
-        currMerchantingData = data;
-        productItemData = GameManager.instance.productItemDict[currMerchantingData.productid];
-        name.text = productItemData.name;
-        maxCount = currMerchantingData.maxCount;
-        currCount = 0;
-        countInput.text = currCount.ToString();
-        UpdateMoney();
-    }
-
-    /// <summary>
-    /// 确认按钮的购买判断
-    /// </summary>
-    private void BuyCheck()
-    {
-        if (currCount == 0)
+        if (GameManager.Instance.playerData.Coin>=float.Parse(moneyText.text))
         {
-            return;
-        }
-        if (GameManager.instance.CurrPlayerData.Coin >= float.Parse(moneyText.text.Trim()))
-        {
-            GameManager.instance.CurrPlayerData.Coin -= float.Parse(moneyText.text);
+            GameManager.Instance.playerData.Coin -= float.Parse(moneyText.text);            
             UIManager.Instance.closePanel<BuyItemCheckPanel>();
             UIManager.Instance.openPanel<TipPanel>().UpdateTipText("购买成功");
-            //往背包里添加购买的物品
-            GameManager.instance.knapsack.productDict[currMerchantingData.productid] += currCount;
-            //背包物品发生变化，触发数据变化事件
+            GameManager.Instance.currentKnapsack.productDict[currentMerchantingData.productid] += currentCount;
             EventCenter.Instance.EventTrigger(GameEvent.背包数据变化);
+
         }
         else
         {
-            UIManager.Instance.openPanel<TipPanel>().UpdateTipText("当前金币不足");
+            UIManager.Instance.openPanel<TipPanel>().UpdateTipText("当前金币不足，请重新选择");
         }
     }
 
-    private void Add()
+    private void countChange(string newCount)
     {
-        if (currCount >= maxCount)
+        if (int.Parse(newCount)<=0)
         {
-            return;
+            countInput.text = "0";
+            currentCount = 0;
+        }else if (int.Parse(newCount)>=maxCount)
+        {
+            currentCount = maxCount;
+            countInput.text=maxCount.ToString();     
         }
-
-        currCount++;
-        countInput.text = currCount.ToString();
         UpdateMoney();
     }
 
-    private void Reduce()
+    public void updateData(MerchantingData data)
     {
-        if (currCount <= 0)
+        currentMerchantingData = data;
+        productItemData = GameManager.Instance.productItemDict[currentMerchantingData.productid];
+        name.text=productItemData.name;
+        maxCount=currentMerchantingData.maxCount;
+        currentCount = 0;
+        countInput.text=currentCount.ToString();    
+        UpdateMoney();
+
+    }
+
+    private void jia()
+    {
+        if (currentCount>=maxCount)
         {
             return;
         }
-        currCount--;
-        countInput.text = currCount.ToString();
-        //更新消耗的金币
+        currentCount++;
+        countInput.text=currentCount.ToString();
         UpdateMoney();
+   
     }
 
-    /// <summary>
-    /// 更新金币信息  
-    /// </summary>
-    private void UpdateMoney()
+    private void jian()
     {
-        int currPrice = currCount * productItemData.price;
-        moneyText.text = currPrice.ToString();
-        //判断金币是否足够
-        if (GameManager.instance.CurrPlayerData.Coin>=currPrice)
+        if (currentCount<=0)
         {
-            isShowButBtn = true;
-            moneyText.color = Color.black;
+            return;
+        }
+        currentCount--;
+        countInput.text=currentCount.ToString();
+        UpdateMoney();
+      
+    }
+
+    public void UpdateShowBuyBtn()
+    {
+        if (isShowBuyBtn)
+        {
+            checkBtn.gameObject.SetActive(true);
         }
         else
         {
-            isShowButBtn = false;
-            moneyText.color = Color.red;
+            checkBtn.gameObject.SetActive(false);
         }
-
-        UpdateShowBuyBtn();
     }
-
-    /// <summary>
-    /// 更新购买按钮状态
-    /// </summary>
-    private void UpdateShowBuyBtn()
+    
+    public void UpdateMoney()
     {
-        checkBtn.gameObject.SetActive(isShowButBtn);
+         int currentPrice = currentCount * productItemData.price;
+         moneyText.text=currentPrice.ToString();
+         if (GameManager.Instance.playerData.Coin>=currentPrice)
+         {
+             isShowBuyBtn=true;
+             moneyText.color=Color.black;
+         }
+         else
+         {
+             isShowBuyBtn=false;
+             moneyText.color=Color.red;
+         }
+         UpdateShowBuyBtn();
     }
-
-    /// <summary>
-    /// 输入框内容发生变化时执行的方法
-    /// </summary>
-    public void CountChange(string newValue)
+    private void OnDisable()
     {
-        string countStr = newValue.Trim();//去掉空格
-        int count = int.Parse(countStr);
-        currCount = count;
-        if (count < 0)
-        {
-            countInput.text = 0.ToString();
-            currCount = 0;
-        }
-        else if (count >= maxCount)
-        {
-            countInput.text = maxCount.ToString();
-            currCount = maxCount;
-        }
-        UpdateMoney();
+        jianBtn.onClick.RemoveAllListeners();
+        jiaBtn.onClick.RemoveAllListeners();
+        countInput.onValueChanged.RemoveAllListeners();
+        checkBtn.onClick.RemoveAllListeners();
     }
 }

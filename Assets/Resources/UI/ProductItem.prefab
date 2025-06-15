@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 308320925737665808}
   m_RootOrder: 0
@@ -103,6 +104,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 308320925737665808}
   m_RootOrder: 2
@@ -182,6 +184,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 308320925737665808}
   m_RootOrder: 1
@@ -245,7 +248,7 @@ GameObject:
   - component: {fileID: 7164292966326762494}
   - component: {fileID: 5967449295611089991}
   - component: {fileID: 8310186555984840657}
-  - component: {fileID: 932941222962699354}
+  - component: {fileID: 164114125981130234}
   m_Layer: 5
   m_Name: ProductItem
   m_TagString: Untagged
@@ -263,6 +266,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 981332421805279618}
   - {fileID: 5167091153736506435}
@@ -339,7 +343,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &932941222962699354
+--- !u!114 &164114125981130234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,9 +352,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9140477133282363688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1af27ad5a298d42a2b0f718ce6e0e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1539c26bf6a46d742a35063a3167adfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 9105946146800947323}
+  Icon: {fileID: 9105946146800947323}
   name: {fileID: 1527427549465839982}
   num: {fileID: 4573294917023467162}
